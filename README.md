@@ -7,8 +7,8 @@ SilentPool é um site para criação de salas anônimas ou não, que contribui p
 ## O que a plataforma é capaz de fazer :checkered_flag:
 <ul>
   <li>:trophy: Criar e acessar salas através de um código.</li>
-:trophy: Submissão, votação e exibição de perguntas.
-:trophy: Permitir o administrador da sala ocultar perguntas e marcar como respondidas.
+  <li>:trophy: Submissão, votação e exibição de perguntas.</li>
+  <li>:trophy: Permitir o administrador da sala ocultar perguntas e marcar como respondidas.</li>
 </ul>
 
 ## Técnicas e tecnologias utilizadas
