@@ -25,7 +25,7 @@ SilentPool é um site para criação de salas anônimas ou não, que contribui p
 ## Técnicas e tecnologias utilizadas
 
 <ul>
-  <li>Angular 17.0</li>
+  <li>Angular 17.3.0</li>
   <li>VSCode</li>
 </ul>
 
