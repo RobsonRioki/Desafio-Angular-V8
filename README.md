@@ -4,14 +4,19 @@
 
 SilentPool é um site para criação de salas anônimas ou não, que contribui para a validação de ideias, interação entre usuários e auxilia na exposição de membros que temem ser julgados ou têm dificuldades em se expor com medo de uma possível crítica. O site foi desenvolvido com a intenção de garantir um lugar confortável e sem barreiras para os funcionários da V8 se comunicarem e obterem feedback. Além disso, o site conta com um sistema de ranking que favorece as ideias mais importantes a terem mais reconhecimento dos demais. Lembrando sempre que é importante ter respeito e ser cuidadoso para não ofender ou desrespeitar alguém.
 
-<h2>Técnicas e tecnologias utilizadas</h2>
+## O que a plataforma é capaz de fazer :checkered_flag:
+:trophy: Criar e acessar salas através de um código.
+:trophy: Submissão, votação e exibição de perguntas.
+:trophy: Permitir o administrador da sala ocultar perguntas e marcar como respondidas.
+
+## Técnicas e tecnologias utilizadas
 
 <ul>
   <li>Angular 17</li>
   <li>VSCode</li>
 </ul>
 
-<h2>Desenvolvedores</h2>
+## Desenvolvedores
 
 <ul>
   <li>@lufemene</li>
