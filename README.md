@@ -16,7 +16,7 @@ SilentPool é um site para criação de salas anônimas ou não, que contribui p
 <p><b>Criar sala:</b> O usuário pode criar uma sala personaliza-la com a quantidade maxima de membros e a duração. Após confirmar todas as opções e apertar em criar, receberá um código de acesso que deve ser enviado para os membros que o usuario tem interesse em convidar.</p>
 <p> <b>Entrar na sala:</b> O usuário através de um código pode entrar em uma sala onde terá a permissão apenas para perguntar e votar.</p>
 <p><b>Submissão:</b> Todos que estiverem dentro da sala podem subir perguntas que serão respondidas pelos membros da sala</p>
-<p> <b>Votação:</b> Cada participante pode votar no tópico que achar mais relevante para deixar-lo no topo. A votação é atualizada a cada 15 segundos.</p>
+<p> <b>Votação:</b> Cada participante pode votar no tópico que achar mais relevante para deixar-lo no topo. A votação é atualizada a cada 10 segundos.</p>
 <p><b>Exibição:</b> As perguntas serão exibidas para todos que estiveram na sala.</p>
 <p> <b>Permissões:</b> O Administrador (criador da sala) pode remover perguntas que acredita ser ofensiva ou irrelevante dentro do contexto imposto na criação.</p>
 
