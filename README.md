@@ -34,5 +34,6 @@ SilentPool é um site para criação de salas anônimas ou não, que contribui p
 <ul>
   <li>@lufemene</li>
   <li>@RobsonRioki</li>
+  <li>@ThiagoBrito</li>
 </ul>
 
