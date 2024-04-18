@@ -8,13 +8,17 @@ import { BannerComponent } from './shared/banner/banner.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { TelaAdminComponent } from './pages/tela-admin/tela-admin.component';
+import { ContainerComponent } from './shared/container/container.component';
+import { ButtonComponent } from './shared/button/button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
     HomeComponent,
-    TelaAdminComponent
+    TelaAdminComponent,
+    ContainerComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

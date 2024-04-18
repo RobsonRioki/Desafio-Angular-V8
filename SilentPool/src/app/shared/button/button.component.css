@@ -1,0 +1,16 @@
+button {
+    border: 0px;
+    height: 35px;
+    width: 120px;
+    border-radius: var(--borderr);
+}
+
+
+.primary{
+    background-color: red;
+    border: 1px solid;
+}
+.secondary{
+    background-color: blue;
+    border: 1px solid;
+}

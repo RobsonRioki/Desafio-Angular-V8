@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './home.component.css'
 })
 export class HomeComponent {
-  @Input() variant: 'primary' | 'secundary' = 'primary' ;
+
 }
