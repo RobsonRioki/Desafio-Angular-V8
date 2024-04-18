@@ -7,12 +7,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { BannerComponent } from './shared/banner/banner.component';
 import { HomeComponent } from './pages/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
+import { TelaAdminComponent } from './pages/tela-admin/tela-admin.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BannerComponent,
-    HomeComponent
+    HomeComponent,
+    TelaAdminComponent
   ],
   imports: [
     BrowserModule,
