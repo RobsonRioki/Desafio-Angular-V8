@@ -10,6 +10,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { TelaAdminComponent } from './pages/tela-admin/tela-admin.component';
 import { ContainerComponent } from './shared/container/container.component';
 import { ButtonComponent } from './shared/button/button.component';
+import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -18,12 +20,14 @@ import { ButtonComponent } from './shared/button/button.component';
     HomeComponent,
     TelaAdminComponent,
     ContainerComponent,
-    ButtonComponent
+    ButtonComponent,
+    ContainerPerguntaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule
 
   ],
   providers: [

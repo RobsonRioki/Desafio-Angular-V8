@@ -1,5 +1,63 @@
-<app-container class="container">
-    <div class="">
-        boce é
-    </div>
-</app-container>
+<section class="sectionSalaPerguntas">
+    <h1 class="tituloSilentPool">SILENT POLL</h1>
+    <app-container class="container">
+        <div class="divAdmin">
+            <h1 class="tituloAdmin">Você está como moderador</h1>
+    
+            <div class="informacoesSala">
+                <ul>
+                    <li class="listaInformacoesSala">Nome da sala: <strong>Status Geral</strong></li>
+                    <li class="listaInformacoesSala">Código da sala: <strong>#562162</strong></li>
+                    <li class="listaInformacoesSala">Participantes: 38</li>
+                    <li class="listaInformacoesSala">Tempo restante: 1h 27min</li>
+                </ul>
+            </div>
+                <div class="divBotao">
+                    <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"></app-button>
+                </div>
+        </div>
+        <div class="divPerguntas">
+            <app-container-pergunta class="divPergunta">
+                    <div class="divP1">
+                <p>Categoria: financeiro</p>
+                <p>perguntaperguntapergunta</p>
+            </div>
+            <div class="divIcones">
+                <mat-icon fontIcon="thumb_up"></mat-icon>
+                <p>0</p>
+                <mat-icon fontIcon="add"></mat-icon>
+            </div></app-container-pergunta>
+            <app-container-pergunta class="divPergunta">    
+                <div class="divP1">
+                <p>Categoria: financeiro</p>
+                <p>perguntaperguntapergunta</p>
+            </div>
+            <div class="divIcones">
+                <mat-icon fontIcon="thumb_up"></mat-icon>
+                <p>1</p>
+                <mat-icon fontIcon="add"></mat-icon>
+            </div></app-container-pergunta>
+            <app-container-pergunta class="divPergunta">   
+                 <div class="divP1">
+                <p>Categoria: financeiro</p>
+                <p>perguntaperguntapergunta</p>
+            </div>
+            <div class="divIcones">
+                <mat-icon fontIcon="thumb_up"></mat-icon>
+                <p>2
+                </p>
+                <mat-icon fontIcon="add"></mat-icon>
+            </div></app-container-pergunta>
+            <app-container-pergunta class="divPergunta">    
+                <div class="divP1">
+                <p>Categoria: financeiro</p>
+                <p>perguntaperguntapergunta</p>
+            </div>
+            <div class="divIcones">
+                <mat-icon fontIcon="thumb_up"></mat-icon>
+                <p>3</p>
+                <mat-icon fontIcon="add"></mat-icon>
+            </div></app-container-pergunta>
+        </div>
+    </app-container>
+</section>

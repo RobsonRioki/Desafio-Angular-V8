@@ -1,8 +1,89 @@
+.sectionSalaPerguntas{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.tituloSilentPool{
+    font-family: 'Bebas Neue';
+    font-size: 48px;
+}
+
 .container{
     display: flex;
     justify-content: space-around;
-    /* background-color: var(--grey-100); */
-    background-color: red;
-    width: 500px;
+    background-color: var(--grey-100);
+    /* background-color: red; */
+    width: 100%;
+    height: 600px;
     border-radius: var(--borderr-20);
+    flex-direction: row;
 } 
+
+.divAdmin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+    border-radius: 20px 0 0 20px;
+    width:50%;
+    width: 560px;
+    justify-content: space-between;
+    height: 100%;
+    margin-left: -50px;
+    padding: 40px 0;
+}
+
+.tituloAdmin{
+margin-top: 80px;
+}
+
+.informacoesSala{
+    display: flex;
+    flex-direction: column;
+}
+
+.divPerguntas{
+    display: flex;
+    background-color: var(--gray-100);
+    max-width: 50%;
+    border-radius: 0 20px 20px 0;
+    flex-direction: column;
+}
+
+.divPergunta{
+    margin: 10px 0;
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: 450px;
+    height: 100px;
+    justify-content: space-between;
+    padding: 5px;
+    font-weight: normal;
+}
+
+.listaInformacoesSala{
+    list-style-type: none;
+    font-weight: normal;
+}
+
+.divIcones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.divP1{
+    display: flex;
+    flex-direction: column;
+}
+
+    
+
+mat-icon {
+    cursor: pointer;
+}
