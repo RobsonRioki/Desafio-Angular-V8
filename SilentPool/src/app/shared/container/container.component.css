@@ -1,4 +1,8 @@
-ng-content{
-    width: 1000px;
-    background-color: red;
+:host{
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: 1048px;
+    display: flex;
+    background-color: var(--grey-100);
 }

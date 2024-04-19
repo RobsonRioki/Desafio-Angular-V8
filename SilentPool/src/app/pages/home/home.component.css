@@ -1,9 +1,20 @@
 .container{
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    background-color: var(--grey-100);
     border-radius: var(--borderr-20);
 } 
+.divBanner{
+    width: 50%;
+    height: 100%;
+    border-radius: 10px 40px 40px 10px;
+}
 
+/* .banner{
+    width: 50%;
+    height: 100%;
+    border-radius: 10px 40px 40px 10px;;
+} */
 
 .button-home{
     width: 200px;
@@ -14,6 +25,8 @@
 .form-sala{
     background-color: var(--grey-100);
     display: flex;
+    width: 50%;
+    height: auto;
     flex-direction: column;
 }
 

@@ -1,0 +1,8 @@
+.container{
+    display: flex;
+    justify-content: space-around;
+    /* background-color: var(--grey-100); */
+    background-color: red;
+    width: 500px;
+    border-radius: var(--borderr-20);
+} 
