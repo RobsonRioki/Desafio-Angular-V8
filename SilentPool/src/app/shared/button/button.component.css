@@ -1,16 +1,26 @@
 button {
     border: 0px;
     height: 35px;
-    width: 120px;
     border-radius: var(--borderr);
 }
 
+.size-100{
+    width: 100px;
+}
+
+.size-200{
+    width: 200px;
+}
+
+
 
 .primary{
-    background-color: red;
+    background-color: var(--blue-800);
+    color: rgb(253, 236, 236);
     border: 1px solid;
 }
 .secondary{
-    background-color: blue;
+    background-color: var(--blue-800);
+    color: rgb(253, 236, 236);
     border: 1px solid;
 }

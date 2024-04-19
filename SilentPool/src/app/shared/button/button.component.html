@@ -1,3 +1,3 @@
-<button [ngClass]="typeBtn==='primary'?'primary':'secondary'">
-    {{ textBtn }}
+<button [ngClass]="{'primary': typeBtn=== 'primary', 'secondary': typeBtn==='secondary', 'size-100': widthBtn==='100', 'size-200': widthBtn==='200'} " >
+    {{ textBtn }} 
 </button>

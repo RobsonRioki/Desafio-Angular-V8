@@ -1,40 +1,41 @@
-.container{
+.conteudo-home{
     display: flex;
-    justify-content: space-around;
+    align-items: center;
+    width: 769px;
     background-color: var(--grey-100);
     border-radius: var(--borderr-20);
 } 
-.divBanner{
-    width: 50%;
-    height: 100%;
-    border-radius: 10px 40px 40px 10px;
-}
 
-/* .banner{
+.conteudo-home img{
     width: 50%;
-    height: 100%;
+    height: auto;
     border-radius: 10px 40px 40px 10px;;
-} */
-
-.button-home{
-    width: 200px;
-}&.primary{
-    background-color: var(--blue-800);
-}
+} 
 
 .form-sala{
     background-color: var(--grey-100);
     display: flex;
-    width: 50%;
-    height: auto;
+    width: 60%;
+    height: 100%;
     flex-direction: column;
+    align-items: center;
+    
 }
 
-button [typeBtn="primary"]{
-    background-color: red;
-    border: 1px solid;
+.form-sala h2{
+    padding: 0;
 }
-button [typeBtn="secondary"]{
-    background-color: blue;
+
+.entrar-codigo {
+    padding: 50px;
+}
+
+#segundo-botao{
+    padding: 50px;
+}
+
+.secondary{
+    background-color: var(--blue-800);
+    color: rgb(253, 236, 236);
     border: 1px solid;
 }
