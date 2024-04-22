@@ -4,8 +4,6 @@
 <app-container>
     <section class="sectionSalaPerguntas">
         <div class="divAdmin">
-            <h1 class="tituloAdmin">Você está como moderador</h1>
-    
             <div class="informacoesSala">
                 <ul>
                     <li class="listaInformacoesSala">Nome da sala: <strong>Status Geral</strong></li>
@@ -14,11 +12,17 @@
                     <li class="listaInformacoesSala">Tempo restante: 1h 27min</li>
                 </ul>
             </div>
-                <div class="divBotao">
-                    <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"></app-button>
-                </div>
         </div>
+
+        
         <div class="divPerguntas">
+            <p class="textoInfo">Digite sua pergunta</p>
+            <app-container-pergunta class="divInserirPergunta">
+                <input type="text" placeholder="Categoria" class="inputCategoria">
+                <input type="text" placeholder="Sua pergunta aqui" class="inputPergunta">
+            </app-container-pergunta>
+            <app-button typeBtn="primary" textBtn="Enviar" onclick="" class="botaoEnviar"></app-button>
+            <p class="textoInfo">Últimas perguntas</p>
             <app-container-pergunta class="divPergunta">
                     <div class="divP1">
                 <p>Categoria: financeiro</p>

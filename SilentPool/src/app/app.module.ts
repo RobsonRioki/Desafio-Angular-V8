@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -12,6 +11,7 @@ import { ContainerComponent } from './shared/container/container.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
+import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './shared/modal/modal.component';
 

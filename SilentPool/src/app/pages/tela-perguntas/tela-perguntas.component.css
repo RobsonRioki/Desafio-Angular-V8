@@ -40,14 +40,10 @@
     border-radius: 20px 0 0 20px;
     width:100vh;
     /* width: 560px; */
-    justify-content: space-between;
+    justify-content: center;
     height: 100%;
     margin-left: -50px;
     padding: 40px 0;
-}
-
-.tituloAdmin{
-margin-top: 80px;
 }
 
 .informacoesSala{
@@ -56,8 +52,10 @@ margin-top: 80px;
 }
 
 .divPerguntas{
+    color: #475569;
+    margin: 15px 10px;
     display: flex;
-    background-color: var(--grey-100);
+    /* background-color: var(--grey-100); */
     max-width: 50vh;
     width: 100vh;
     height: 100vh;
@@ -66,16 +64,53 @@ margin-top: 80px;
     flex-direction: column;
 }
 
+.textoInfo{
+    margin: 5px;
+}
+
 .divPergunta{
-    margin: 15px 10px;
+    margin: 15px 0px;
     display: flex;
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
     max-width: 50vh;
     width: auto;
     height: 100px;
     justify-content: space-between;
     padding: 10px;
     font-weight: normal;
+}
+
+.divInserirPergunta{
+    display: flex;
+    max-width: 50vh;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.inputCategoria{
+    border: 1px solid #0000001A;
+    border-radius: 4px;
+    margin: 10px;
+    display: flex;
+    height: 25px;
+    padding: 5px;
+}
+
+.inputPergunta{
+    border: 1px solid #0000001A;
+    border-radius: 4px;
+    margin: 10px;
+    height: 150px;
+    padding: 5px;
+}
+
+.botaoEnviar{
+    display: flex;
+    justify-content: end;
+    margin: 5px;
 }
 
 .listaInformacoesSala{
