@@ -12,6 +12,7 @@ import { ContainerComponent } from './shared/container/container.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
+import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MatIconModule } from '@angular/material/icon';
     TelaAdminComponent,
     ContainerComponent,
     ButtonComponent,
-    ContainerPerguntaComponent
+    ContainerPerguntaComponent,
+    TelaPerguntasComponent
   ],
   imports: [
     BrowserModule,
