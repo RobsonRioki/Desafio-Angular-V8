@@ -12,6 +12,10 @@ import { ContainerComponent } from './shared/container/container.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 
 @NgModule({
   declarations: [
