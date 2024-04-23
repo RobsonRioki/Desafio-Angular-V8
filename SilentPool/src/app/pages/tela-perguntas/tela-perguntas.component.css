@@ -26,7 +26,7 @@
     justify-content: space-around;
     background-color: var(--grey-100);
      /* background-color: red;  */
-    width: 100vh;
+    width: 90vw;
     height: 100vh;
     border-radius: var(--borderr-20);
     flex-direction: row;
@@ -38,11 +38,12 @@
     align-items: center;
     background-color: #FAFAFA;
     border-radius: 20px 0 0 20px;
-    width:100vh;
+    width: 90vw;
+    max-width: 50%;
     /* width: 560px; */
     justify-content: center;
     height: 100%;
-    margin-left: -50px;
+    /* margin-left: -50px; */
     padding: 40px 0;
 }
 
@@ -52,12 +53,13 @@
 }
 
 .divPerguntas{
+    max-width: 50%;
     color: #475569;
     margin: 15px 10px;
     display: flex;
     /* background-color: var(--grey-100); */
-    max-width: 50vh;
-    width: 100vh;
+    /* max-width: 50vh; */
+    width: 90vw;
     height: 100vh;
     max-height: 100vh;
     border-radius: 0 20px 20px 0;
@@ -72,7 +74,7 @@
     margin: 15px 0px;
     display: flex;
     /* background-color: rgb(255, 255, 255); */
-    max-width: 50vh;
+    max-width: 90vh;
     width: auto;
     height: 100px;
     justify-content: space-between;
@@ -80,11 +82,14 @@
     font-weight: normal;
 }
 
+
+
 .divInserirPergunta{
     display: flex;
-    max-width: 50vh;
-    width: auto;
-    height: auto;
+    /* max-width: 50vh; */
+    width: 90vh;
+    
+    /* height: auto; */
     border-radius: 6px;
     flex-direction: column;
     margin-bottom: 20px;
@@ -92,6 +97,7 @@
 
 .inputCategoria{
     border: 1px solid #0000001A;
+    width: 81vh;
     border-radius: 4px;
     margin: 10px;
     display: flex;
@@ -103,6 +109,7 @@
     border: 1px solid #0000001A;
     border-radius: 4px;
     margin: 10px;
+    width: 81vh;
     height: 150px;
     padding: 5px;
 }
@@ -124,6 +131,11 @@
     justify-content: center;
     align-items: center;
     justify-content: space-between;
+    flex-direction: row;
+}
+
+.divIcones p{
+    margin: 10px;
 }
 
 .divP1{
