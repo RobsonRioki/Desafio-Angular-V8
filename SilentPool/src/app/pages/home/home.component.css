@@ -1,33 +1,59 @@
 .conteudo-home{
     display: flex;
     align-items: center;
-    width: 769px;
+    width: 90vw;
+    height: 90vh;
     background-color: var(--grey-100);
     border-radius: var(--borderr-20);
 } 
 
-.conteudo-home img{
+.img-home{
+    display: flex;
     width: 50%;
+    height: 100%;
+}
+
+.img-img {
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.conteudo-home img{
     height: auto;
-    border-radius: 10px 40px 40px 10px;;
+    border-radius: 20px 10px 10px 20px;
 } 
 
 .form-sala{
     background-color: var(--grey-100);
     display: flex;
-    width: 60%;
-    height: 100%;
+    width: 50%;
+    height: auto;
     flex-direction: column;
     align-items: center;
-    
 }
 
 .form-sala h2{
-    padding: 0;
+    padding: 50px;
+    font-size: 30pt;
 }
 
-.entrar-codigo {
+.form-sala p{
     padding: 50px;
+    font-size: 20pt;
+    color: rgb(32, 32, 32);
+}
+
+.entrar {
+    padding: 50px;
+    font-size: 14pt;
+}
+
+.entrar input{
+    width: 250px;
+    height: 35px;
+    border-radius: var(--borderr);
+    border-color: var(--grey-300);
 }
 
 #segundo-botao{
