@@ -1,0 +1,20 @@
+<section class="modal">
+    <div class="container-popout">
+        <h1 mat-dialog-title>Vamos criar uma nova sala de perguntas</h1>
+        <div class="opcoes">
+            <input type="text" placeholder="Nome da sala">
+            <select name="" id="selecionar-duracao">
+                <option value="0">Tempo de uso da sala</option>
+                <option value="1">30min</option>
+                <option value="2">1h</option>
+                <option value="3">9 meses</option>
+            </select>
+        </div>
+        <div mat-dialog-content>
+        </div>
+        <div class="botoes-popout">
+            <app-button typeBtn="primary"  textBtn="Cancelar" mat-dialog-close></app-button>
+            <app-button typeBtn="tertiary" textBtn="Criar"></app-button>
+        </div>
+    </div>
+</section>

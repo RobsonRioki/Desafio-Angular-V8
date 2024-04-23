@@ -12,10 +12,8 @@ import { ContainerComponent } from './shared/container/container.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
+import {MatDialogModule} from '@angular/material/dialog';
+import { ModalComponent } from './shared/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -25,13 +23,15 @@ import { MatIconModule } from '@angular/material/icon';
     TelaAdminComponent,
     ContainerComponent,
     ButtonComponent,
-    ContainerPerguntaComponent
+    ContainerPerguntaComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
 
   ],
   providers: [

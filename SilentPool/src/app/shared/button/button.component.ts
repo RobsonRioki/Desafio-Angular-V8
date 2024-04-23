@@ -7,7 +7,7 @@ import { Component, Input} from '@angular/core';
 })
 export class ButtonComponent{
 
-  @Input() typeBtn: 'primary' | 'secondary' = 'primary' ;
+  @Input() typeBtn: 'primary' | 'secondary' | 'tertiary' = 'primary' ;
   @Input() textBtn: string = '';
   @Input() widthBtn: string = '100';
 
