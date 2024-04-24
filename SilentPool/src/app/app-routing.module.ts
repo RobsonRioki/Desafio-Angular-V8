@@ -10,11 +10,11 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path: 'tela-admin',
+    path: 'admin',
     component: TelaAdminComponent
   },
   {
-    path: 'tela-perguntas',
+    path: 'perguntas',
     component: TelaPerguntasComponent
   }
 ];
