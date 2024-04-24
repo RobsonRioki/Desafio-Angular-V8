@@ -14,6 +14,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './shared/modal/modal.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -24,14 +27,18 @@ import { ModalComponent } from './shared/modal/modal.component';
     ContainerComponent,
     ButtonComponent,
     ContainerPerguntaComponent,
-    ModalComponent
+    ModalComponent,
+    TelaPerguntasComponent,
+    MenuComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MatMenuModule
 
   ],
   providers: [
