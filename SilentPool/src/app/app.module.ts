@@ -13,6 +13,9 @@ import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';
+import { MenuComponent } from './shared/menu/menu.component';
+import { MatMenuModule } from '@angular/material/menu';
+
 
 @NgModule({
   declarations: [
@@ -23,13 +26,16 @@ import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.co
     ContainerComponent,
     ButtonComponent,
     ContainerPerguntaComponent,
-    TelaPerguntasComponent
+    TelaPerguntasComponent,
+    MenuComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
 
   ],
   providers: [
