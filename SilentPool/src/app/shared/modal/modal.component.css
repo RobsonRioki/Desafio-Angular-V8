@@ -5,8 +5,8 @@
 }
 
 .opcoes{
-    width: 80%;
-    padding: 10px;
+    width: 90%;
+    padding: 5px;
 }
 
 .opcoes select{
@@ -14,18 +14,30 @@
     width: 50%;
     height: 40px;
     border-color: var(--grey-300);
+    border-radius: var(--borderr);
 }
 
 .opcoes input{
     width: 100%;
     height: 40px;
+    margin: 10px 0;
     border-color: var(--grey-300);
+    border-radius: var(--borderr);
 }
 
 .container-popout{
     width: 100%;
-    padding: 20px 0;
+    padding: 20px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
+
+.botoes-popout{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+

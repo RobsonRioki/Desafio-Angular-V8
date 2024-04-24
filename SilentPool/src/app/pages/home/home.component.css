@@ -51,7 +51,7 @@
 
 .entrar input{
     width: 250px;
-    height: 35px;
+    height: 44px;
     border-radius: var(--borderr);
     border-color: var(--grey-300);
 }
