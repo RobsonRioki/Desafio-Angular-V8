@@ -6,12 +6,12 @@
         <div class="divAdmin">
             <h1 class="tituloAdmin">Você está como moderador</h1>
 
-            <div class="informacoesSala">
+            <div class="informacoesSala" *ngFor = "let dado of dados">
                 <ul>
-                    <li class="listaInformacoesSala">Nome da sala: <strong>Status Geral</strong></li>
-                    <li class="listaInformacoesSala">Código da sala: <strong>#562162</strong></li>
-                    <li class="listaInformacoesSala">Participantes: 38</li>
-                    <li class="listaInformacoesSala">Tempo restante: 1h 27min</li>
+                    <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
+                    <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
+                    <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
+                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li>
                 </ul>
             </div>
             <div class="divBotao">
