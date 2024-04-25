@@ -5,7 +5,7 @@
     <section class="sectionSalaPerguntas">
         <div class="divAdmin">
             <h1 class="tituloAdmin">Você está como moderador</h1>
-    
+
             <div class="informacoesSala">
                 <ul>
                     <li class="listaInformacoesSala">Nome da sala: <strong>Status Geral</strong></li>
@@ -14,59 +14,25 @@
                     <li class="listaInformacoesSala">Tempo restante: 1h 27min</li>
                 </ul>
             </div>
-                <div class="divBotao">
-                    <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()" routerLink="/"></app-button>
-                </div>
+            <div class="divBotao">
+                <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"
+                    routerLink="/"></app-button>
+            </div>
         </div>
         <div class="divPerguntas">
-            <app-container-pergunta class="divPergunta">
-                    <div class="divP1">
-                <p>Categoria: financeiro</p>
-                <p>perguntaperguntapergunta</p>
-            </div>
-            <div class="divIcones">
-                <div class="divIconeNumero">
-                    <mat-icon fontIcon="thumb_up"></mat-icon>
-                    <p>0</p>
-                </div>
-                <app-menu></app-menu>
-            </div></app-container-pergunta>
-            <app-container-pergunta class="divPergunta">
+            <app-container-pergunta class="divPergunta" *ngFor = "let question of questions" >
                 <div class="divP1">
-            <p>Categoria: financeiro</p>
-            <p>perguntaperguntapergunta</p>
-        </div>
-        <div class="divIcones">
-            <div class="divIconeNumero">
-                <mat-icon fontIcon="thumb_up"></mat-icon>
-                <p>0</p>
-            </div>
-            <app-menu></app-menu>
-        </div></app-container-pergunta>
-        <app-container-pergunta class="divPergunta">
-            <div class="divP1">
-        <p>Categoria: financeiro</p>
-        <p>perguntaperguntapergunta</p>
-    </div>
-    <div class="divIcones">
-        <div class="divIconeNumero">
-            <mat-icon fontIcon="thumb_up"></mat-icon>
-            <p>0</p>
-        </div>
-        <app-menu></app-menu>
-    </div></app-container-pergunta>
-    <app-container-pergunta class="divPergunta">
-        <div class="divP1">
-    <p>Categoria: financeiro</p>
-    <p>perguntaperguntapergunta</p>
-</div>
-<div class="divIcones">
-    <div class="divIconeNumero">
-        <mat-icon fontIcon="thumb_up"></mat-icon>
-        <p>0</p>
-    </div>
-    <app-menu></app-menu>
-</div></app-container-pergunta>
+                    <p>Categoria: {{question.category}}</p>
+                    <p>{{question.question}}</p>
+                </div>
+                <div class="divIcones">
+                    <div class="divIconeNumero">
+                        <mat-icon fontIcon="thumb_up"></mat-icon>
+                        <p>{{question.vote}}</p>
+                    </div>
+                    <app-menu></app-menu>
+                </div>
+            </app-container-pergunta>
         </div>
     </section>
-    </app-container>
+</app-container>

@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { MatMenuModule } from '@angular/material/menu';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { MatMenuModule } from '@angular/material/menu';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatMenuModule
+    MatMenuModule,
+    HttpClientModule
 
   ],
   providers: [
