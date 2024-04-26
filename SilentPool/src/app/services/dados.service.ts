@@ -14,8 +14,8 @@ export class DadosService {
     return this.httpClient.get<[]>(`${this.baseURL}/workspace`)
   }
 
-  // postDados() {
-  //   return this.httpClient.post<[]>(`${this.baseURL}/workspace`)
-  // }
+  postDados(novaSala: any) {
+    return this.httpClient.post<[]>(`${this.baseURL}/workspace`, novaSala)
+  }
 }
 
