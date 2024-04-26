@@ -17,6 +17,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [

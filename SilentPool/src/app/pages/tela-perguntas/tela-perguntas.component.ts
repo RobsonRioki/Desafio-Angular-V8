@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { DadosService } from '../../services/dados.service';
 
+
 interface Question{
   category: string
   question: string
@@ -28,6 +29,8 @@ interface Dados{
   styleUrl: './tela-perguntas.component.css'
 })
 export class TelaPerguntasComponent implements OnInit {
+  categoria: string = '';
+  pergunta: string= '';
  
   constructor( private questionService: QuestionService, private  dadosService: DadosService) {}
 
@@ -45,5 +48,28 @@ export class TelaPerguntasComponent implements OnInit {
         next: dado => this.dados = dado
       }
     )
+}
+
+inserirPergunta(): void {
+  const novaPergunta = {
+    category: this.categoria,
+    question: this.pergunta,
+    vote: 0,
+    isDeleted: false,
+    isReplied: false,
+    workspace: name, 
+    id: '' 
+  };
+
+  this.questionService.postQuestion(novaPergunta).subscribe(
+    response => {
+      console.log('Pergunta enviada com sucesso:', response);
+      this.categoria = '';
+      this.pergunta = '';
+    },
+    error => {
+      console.error('Erro ao enviar pergunta:', error);
+    }
+  );
 }
 }

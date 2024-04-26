@@ -14,6 +14,10 @@ export class QuestionService {
     return this.httpClient.get<[]>(`${this.baseURL}/questions`)
   }
 
+  postQuestion(novaPergunta: any) {
+    return this.httpClient.post(`${this.baseURL}/questions`, novaPergunta);
+  }
+
   // postQuestions(){}
 
   // deleteQuestions(){}  
