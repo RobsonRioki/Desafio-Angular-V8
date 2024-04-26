@@ -18,6 +18,7 @@ import { MenuComponent } from './shared/menu/menu.component';
 import { MatMenuModule } from '@angular/material/menu';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatMenuModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule
 
   ],
   providers: [

@@ -2,7 +2,7 @@
     <div class="divTituloSilentPoll">
         <h1 class="tituloSilentPoll">SILENT POLL</h1>
     </div>
-    <section class="sectionSalaPerguntas">
+    <section *ngIf="!mostrarNovaSala" class="sectionSalaPerguntas">
         <div class="divAdmin">
             <h1 class="tituloAdmin">Você está como moderador</h1>
 

@@ -28,6 +28,9 @@ interface Dados{
 })
 export class TelaAdminComponent implements OnInit {
 
+  novaSala: Dados | null = null ;
+  mostrarNovaSala: boolean = false;
+
   constructor( private questionService: QuestionService, private  dadosService: DadosService) {}
 
   questions: Array<Question> = []
@@ -41,11 +44,14 @@ export class TelaAdminComponent implements OnInit {
     )
     this.dadosService.getDados().subscribe(
       {
-        next: dado => this.dados = dado
+        next: dado => {
+          this.dados = dado;
+          this.novaSala = this.dados[this.dados.length - 1];
+          this.mostrarNovaSala = true;
+        }
       }
     )
   }
-
   
 
 

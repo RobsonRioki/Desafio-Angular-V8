@@ -3,7 +3,7 @@ import { QuestionService } from '../../services/question.service';
 import { DadosService } from '../../services/dados.service';
 
 
-interface Question{
+interface Question {
   category: string
   question: string
   vote: number
@@ -14,7 +14,7 @@ interface Question{
 }
 
 
-interface Dados{
+interface Dados {
   createAt: number
   name: string
   code: number
@@ -30,46 +30,46 @@ interface Dados{
 })
 export class TelaPerguntasComponent implements OnInit {
   categoria: string = '';
-  pergunta: string= '';
- 
-  constructor( private questionService: QuestionService, private  dadosService: DadosService) {}
+  pergunta: string = '';
+
+  constructor(private questionService: QuestionService, private dadosService: DadosService) { }
 
   questions: Array<Question> = []
   dados: Array<Dados> = []
 
   ngOnInit(): void {
     this.questionService.getQuestions().subscribe(
-     {
-      next: question => this.questions = question
-     }
+      {
+        next: question => this.questions = question
+      }
     )
     this.dadosService.getDados().subscribe(
       {
         next: dado => this.dados = dado
       }
     )
-}
+  }
 
-inserirPergunta(): void {
-  const novaPergunta = {
-    category: this.categoria,
-    question: this.pergunta,
-    vote: 0,
-    isDeleted: false,
-    isReplied: false,
-    workspace: name, 
-    id: '' 
-  };
+  inserirPergunta(): void {
+    const novaPergunta = {
+      category: this.categoria,
+      question: this.pergunta,
+      vote: 0,
+      isDeleted: false,
+      isReplied: false,
+      workspace: name,
+      id: ''
+    };
 
-  this.questionService.postQuestion(novaPergunta).subscribe(
-    response => {
-      console.log('Pergunta enviada com sucesso:', response);
-      this.categoria = '';
-      this.pergunta = '';
-    },
-    error => {
-      console.error('Erro ao enviar pergunta:', error);
-    }
-  );
-}
+    this.questionService.postQuestion(novaPergunta).subscribe(
+      response => {
+        console.log('Pergunta enviada com sucesso:', response);
+        this.categoria = '';
+        this.pergunta = '';
+      },
+      error => {
+        console.error('Erro ao enviar pergunta:', error);
+      }
+    );
+  }
 }
