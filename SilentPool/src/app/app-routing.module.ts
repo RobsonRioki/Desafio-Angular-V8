@@ -14,7 +14,7 @@ const routes: Routes = [
     component: TelaAdminComponent
   },
   {
-    path: 'perguntas',
+    path: 'perguntas/:codigo',
     component: TelaPerguntasComponent
   }
 ];

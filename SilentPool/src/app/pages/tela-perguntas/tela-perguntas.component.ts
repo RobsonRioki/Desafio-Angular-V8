@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { DadosService } from '../../services/dados.service';
+import { ActivatedRoute } from '@angular/router';
 
 
 interface Question {
@@ -32,18 +33,22 @@ export class TelaPerguntasComponent implements OnInit {
   categoria: string = '';
   pergunta: string = '';
 
-  constructor(private questionService: QuestionService, private dadosService: DadosService) { }
+  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) { }
 
   questions: Array<Question> = []
   dados: Array<Dados> = []
 
   ngOnInit(): void {
+
+    const codigo = this.route.snapshot.params['codigo']
+    console.log(codigo)
+
     this.questionService.getQuestions().subscribe(
       {
         next: question => this.questions = question
       }
     )
-    this.dadosService.getDados().subscribe(
+    this.dadosService.getDados(codigo).subscribe(
       {
         next: dado => this.dados = dado
       }
