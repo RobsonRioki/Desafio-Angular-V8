@@ -32,7 +32,7 @@ interface Dados {
 export class TelaPerguntasComponent implements OnInit {
   categoria: string = '';
   pergunta: string = '';
-
+  codigo: string = '';
   constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) { }
 
   questions: Array<Question> = []
@@ -42,15 +42,24 @@ export class TelaPerguntasComponent implements OnInit {
 
     const codigo = this.route.snapshot.params['codigo']
     console.log(codigo)
+    this.codigo = codigo
 
-    this.questionService.getQuestions().subscribe(
+
+    this.dadosService.getDados().subscribe(
       {
-        next: question => this.questions = question
+        next: (dado) =>{ 
+          this.dados = dado.filter((item:Dados)=>String(item.code) === codigo);
+          console.log(dado) 
+        }
       }
     )
-    this.dadosService.getDados(codigo).subscribe(
+    this.getPerguntas()
+  }
+
+  getPerguntas(){
+    this.questionService.getQuestions().subscribe(
       {
-        next: dado => this.dados = dado
+        next: question => this.questions = question.filter((item : Question) => item.workspace === String(this.codigo))
       }
     )
   }
@@ -62,8 +71,7 @@ export class TelaPerguntasComponent implements OnInit {
       vote: 0,
       isDeleted: false,
       isReplied: false,
-      workspace: name,
-      id: ''
+      workspace: this.codigo
     };
 
     this.questionService.postQuestion(novaPergunta).subscribe(
@@ -71,6 +79,7 @@ export class TelaPerguntasComponent implements OnInit {
         console.log('Pergunta enviada com sucesso:', response);
         this.categoria = '';
         this.pergunta = '';
+        this.getPerguntas();
       },
       error => {
         console.error('Erro ao enviar pergunta:', error);

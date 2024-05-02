@@ -10,7 +10,7 @@ export class DadosService {
 
   private baseURL = 'https://65f84d6bdf151452460f1162.mockapi.io/api/v1'
 
-  getDados(codigo: string) {
+  getDados() {
     return this.httpClient.get<[]>(`${this.baseURL}/workspace`)
   }
 
