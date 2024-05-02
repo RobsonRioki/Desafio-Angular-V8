@@ -74,16 +74,21 @@ export class TelaPerguntasComponent implements OnInit {
       workspace: this.codigo
     };
 
-    this.questionService.postQuestion(novaPergunta).subscribe(
-      response => {
-        console.log('Pergunta enviada com sucesso:', response);
+    this.questionService.postQuestion(novaPergunta).subscribe({
+      next: ()=>{
+        console.log('Pergunta enviada com sucesso:');
         this.categoria = '';
         this.pergunta = '';
         this.getPerguntas();
       },
-      error => {
-        console.error('Erro ao enviar pergunta:', error);
-      }
-    );
+      error: (error) => {console.log(error)}
+    })
+
+
+
+
+
+
+     
   }
 }
