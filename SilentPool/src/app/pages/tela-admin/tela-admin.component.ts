@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
 import { DadosService } from '../../services/dados.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Question{
   category: string
@@ -27,30 +28,42 @@ interface Dados{
   styleUrl: './tela-admin.component.css',
 })
 export class TelaAdminComponent implements OnInit {
+  categoria: string = '';
+  pergunta: string = '';
+  code: string = '';
 
-
-  constructor( private questionService: QuestionService, private  dadosService: DadosService) {}
+  constructor( private questionService: QuestionService, private  dadosService: DadosService, private route: ActivatedRoute, private router: Router) {}
 
   questions: Array<Question> = []
   dados: Array<Dados> = []
 
   ngOnInit(): void {
-    this.questionService.getQuestions().subscribe(
-     {
-      next: question => this.questions = question
-     }
-    )
+    
+    const codigo = this.route.snapshot.params['codigo']
+    console.log(this.code)
+    this.code = codigo
+
     this.dadosService.getDados().subscribe(
       {
-        next: dado => {
-          this.dados = dado;
+        next: (dado) =>{ 
+          this.dados = dado.filter((item:Dados)=>String(item.code) === codigo);
+          console.log(dado) 
         }
       }
     )
+    this.getPerguntas()
   }
-  
 
+  getPerguntas(){
+    this.questionService.getQuestions().subscribe(
+     {
+      next: question => this.questions = question.filter((item : Question) => item.workspace === String(this.code))
+     }
+    )
+  }
 
+  // atualizar(){
+  //   this.router.navigate(['/admin', this.code]);
 
-
+  // }
 }
