@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class QuestionService {
     return this.httpClient.post(`${this.baseURL}/questions`, novaPergunta);
   }
 
+  updateQuestion(perguntaAtualizada: any): Observable<any> {
+    const url = `${this.baseURL}/questions/${perguntaAtualizada.id}`;
+    return this.httpClient.put(url, perguntaAtualizada);
+  }
   // postQuestions(){}
 
   // deleteQuestions(){}  

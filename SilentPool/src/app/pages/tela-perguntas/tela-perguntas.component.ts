@@ -33,6 +33,7 @@ export class TelaPerguntasComponent implements OnInit {
   categoria: string = '';
   pergunta: string = '';
   codigo: string = '';
+  id: string = '';
   constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) { }
 
   questions: Array<Question> = []
@@ -83,12 +84,18 @@ export class TelaPerguntasComponent implements OnInit {
       },
       error: (error) => {console.log(error)}
     })
-
-
-
-
-
-
-     
+  }
+  like(id: string) {
+    const questionToUpdate = this.questions.find(
+      (item: Question) => item.id === id
+    );
+    if (questionToUpdate) {
+      questionToUpdate.vote++;
+      this.questionService.updateQuestion(questionToUpdate).subscribe({
+        next: () => {
+          console.log('Voto atualizado com sucesso!');
+        },
+      });
+    }
   }
 }

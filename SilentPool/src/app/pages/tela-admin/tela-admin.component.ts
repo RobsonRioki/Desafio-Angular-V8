@@ -31,6 +31,7 @@ export class TelaAdminComponent implements OnInit {
   categoria: string = '';
   pergunta: string = '';
   code: string = '';
+  id: string = '';
 
   constructor( private questionService: QuestionService, private  dadosService: DadosService, private route: ActivatedRoute, private router: Router) {}
 
@@ -62,8 +63,33 @@ export class TelaAdminComponent implements OnInit {
     )
   }
 
-  // atualizar(){
-  //   this.router.navigate(['/admin', this.code]);
+  like(id: string) {
+    const questionToUpdate = this.questions.find(
+      (item: Question) => item.id === id
+    );
+    if (questionToUpdate) {
+      questionToUpdate.vote++;
+      this.questionService.updateQuestion(questionToUpdate).subscribe({
+        next: () => {
+          console.log('Voto atualizado com sucesso!');
+        },
+      });
+    }
+  }
 
-  // }
+  atualizar() {
+    // Atualiza os dados da sala
+    this.dadosService.getDados().subscribe({
+      next: (dado) => {
+        this.dados = dado.filter(
+          (item: Dados) => String(item.code) === this.code
+        );
+      },
+    });
+
+    // Atualiza a lista de perguntas
+    this.getPerguntas();
+  }
 }
+
+

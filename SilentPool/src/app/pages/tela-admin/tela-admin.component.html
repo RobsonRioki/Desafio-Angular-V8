@@ -17,8 +17,8 @@
             <div class="divBotao">
                 <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"
                     routerLink="/"></app-button>
-                    <!-- <app-button typeBtn="primary" textBtn="Atualizar" onclick="atualizar()"
-                    routerLink="/"></app-button> -->
+                    <app-button typeBtn="primary" textBtn="Atualizar" (click)="atualizar()"
+                    ></app-button>
             </div>
         </div>
         <div class="divPerguntas">
@@ -29,7 +29,7 @@
                 </div>
                 <div class="divIcones">
                     <div class="divIconeNumero">
-                        <mat-icon fontIcon="thumb_up"></mat-icon>
+                        <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
                         <p>{{question.vote}}</p>
                     </div>
                     <app-menu></app-menu>
