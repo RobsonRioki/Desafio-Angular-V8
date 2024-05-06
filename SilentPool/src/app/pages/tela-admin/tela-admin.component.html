@@ -6,7 +6,7 @@
         <div class="divAdmin">
             <h1 class="tituloAdmin">Você está como moderador</h1>
 
-            <div class="informacoesSala" *ngFor = "let dado of dados">
+            <div class="informacoesSala" *ngFor="let dado of dados">
                 <ul>
                     <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
                     <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
@@ -22,19 +22,21 @@
             </div>
         </div>
         <div class="divPerguntas">
-            <app-container-pergunta class="divPergunta" *ngFor = "let question of questions" >
-                <div class="divP1">
-                    <p>Categoria: {{question.category}}</p>
-                    <p>{{question.question}}</p>
-                </div>
-                <div class="divIcones">
-                    <div class="divIconeNumero">
-                        <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
-                        <p>{{question.vote}}</p>
+            <ng-container *ngFor="let question of questions">
+                <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted && !question.isReplied">
+                    <div class="divP1">
+                        <p>Categoria: {{question.category}}</p>
+                        <p>{{question.question}}</p>
                     </div>
-                    <app-menu></app-menu>
-                </div>
-            </app-container-pergunta>
+                    <div class="divIcones">
+                        <div class="divIconeNumero">
+                            <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
+                            <p>{{question.vote}}</p>
+                        </div>
+                        <app-menu [id]="question.id"></app-menu>
+                    </div>
+                </app-container-pergunta>
+            </ng-container>
         </div>
     </section>
 </app-container>

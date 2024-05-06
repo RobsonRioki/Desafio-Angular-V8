@@ -57,9 +57,9 @@ export class TelaAdminComponent implements OnInit {
       },
     });
 
-    this.getPerguntas(); // Chama getPerguntas ao iniciar o componente
+    this.getPerguntas(); 
 
-    // Atualiza as perguntas a cada 5 segundos
+
     setInterval(() => this.getPerguntas(), 5000);
   }
 
@@ -69,7 +69,7 @@ export class TelaAdminComponent implements OnInit {
         this.questions = questions.filter(
           (item: Question) => item.workspace === String(this.code)
         );
-        this.sortQuestionsByVote(); // Organiza as perguntas por votos
+        this.sortQuestionsByVote(); 
       },
     });
   }
@@ -89,7 +89,7 @@ export class TelaAdminComponent implements OnInit {
   }
 
   atualizar() {
-    // Atualiza os dados da sala
+   
     this.dadosService.getDados().subscribe({
       next: (dado) => {
         this.dados = dado.filter(
@@ -98,12 +98,12 @@ export class TelaAdminComponent implements OnInit {
       },
     });
 
-    // Atualiza a lista de perguntas
+    
     this.getPerguntas();
   }
 
   sortQuestionsByVote() {
-    // Ordena as perguntas com base no número de votos em ordem decrescente
+    
     this.questions.sort((a, b) => b.vote - a.vote);
   }
 }

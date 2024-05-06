@@ -1,26 +1,26 @@
-import { Component, OnInit } from '@angular/core';
-// import { QuestionService } from '../../services/question.service';
-// import { DadosService } from '../../services/dados.service';
-// import { ActivatedRoute, Router } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
+import { QuestionService } from '../../services/question.service';
+import { DadosService } from '../../services/dados.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
-// interface Question{
-//   category: string
-//   question: string
-//   vote: number
-//   isDeleted: boolean
-//   isReplied: boolean
-//   workspace: string
-//   id: string
-// }
+interface Question{
+  category: string
+  question: string
+  vote: number
+  isDeleted: boolean
+  isReplied: boolean
+  workspace: string
+  id: string
+}
 
-// interface Dados{
-//   createAt: number
-//   name: string
-//   code: number
-//   participants: number
-//   timeLeft: Date
-//   id: string
-// }
+interface Dados{
+  createAt: number
+  name: string
+  code: number
+  participants: number
+  timeLeft: Date
+  id: string
+}
 
 @Component({
   selector: 'app-menu',
@@ -28,67 +28,77 @@ import { Component, OnInit } from '@angular/core';
   styleUrl: './menu.component.css',
 
 })
-export class MenuComponent /*implements OnInit*/{
-//   categoria: string = '';
-//   pergunta: string = '';
-//   code: string = '';
-//   id: string = '';
+export class MenuComponent implements OnInit{
+  @Input() id : string = '';
 
-//   constructor( private questionService: QuestionService, private  dadosService: DadosService, private route: ActivatedRoute, private router: Router) {}
-//   questions: Array<Question> = []
-//   dados: Array<Dados> = []
+  categoria: string = '';
+  pergunta: string = '';
+  code: string = '';
+  constructor(
+    private questionService: QuestionService,
+    private dadosService: DadosService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) {}
+  questions: Array<Question> = [];
+  dados: Array<Dados> = [];
 
 
-//   ngOnInit(): void {
-    
-//     const codigo = this.route.snapshot.params['codigo']
-//     console.log(this.code)
-//     this.code = codigo
+  ngOnInit(): void {
+    const codigo = this.route.snapshot.params['codigo'];
+    console.log(this.code);
+    this.code = codigo;
 
-//     this.dadosService.getDados().subscribe(
-//       {
-//         next: (dado) =>{ 
-//           this.dados = dado.filter((item:Dados)=>String(item.code) === codigo);
-//           console.log(dado) 
-//         }
-//       }
-//     )
-//     this.getPerguntas()
-//   }
+    this.dadosService.getDados().subscribe({
+      next: (dado) => {
+        this.dados = dado.filter(
+          (item: Dados) => String(item.code) === codigo
+        );
+        console.log(dado);
+      },
+    });
 
-//   getPerguntas(){
-//     this.questionService.getQuestions().subscribe(
-//      {
-//       next: question => this.questions = question.filter((item : Question) => item.workspace === String(this.code))
-//      }
-//     )
-//   }
+    this.getPerguntas();
+    setInterval(() => this.getPerguntas(), 5000);
+  }
 
-// responder(id: string) {
-//     const questionToUpdate = this.questions.find(
-//       (item: Question) => item.id === id
-//     );
-//     if (questionToUpdate) {
-//       questionToUpdate.isReplied=true;
-//       this.questionService.updateQuestion(questionToUpdate).subscribe({
-//         next: () => {
-//           console.log('Voto atualizado com sucesso!');
-//         },
-//       });
-//     }
-//   }
+  getPerguntas() {
+    this.questionService.getQuestions().subscribe({
+      next: (questions) => {
+        this.questions = questions.filter(
+          (item: Question) => item.workspace === String(this.code)
+        );
+      },
+    });
+  }
 
-//   ocultar(id: string) {
-//     const questionToUpdate = this.questions.find(
-//       (item: Question) => item.id === id
-//     );
-//     if (questionToUpdate) {
-//       questionToUpdate.isDeleted=true;
-//       this.questionService.updateQuestion(questionToUpdate).subscribe({
-//         next: () => {
-//           console.log('Voto atualizado com sucesso!');
-//         },
-//       });
-//     }
-//   }
+responder() {
+    const questionToUpdate = this.questions.find(
+      (item: Question) => item.id === this.id
+    );
+    if (questionToUpdate) {
+      questionToUpdate.isReplied=true;
+      this.questionService.updateQuestion(questionToUpdate).subscribe({
+        next: () => {
+          console.log('Voto atualizado com sucesso!');
+        },
+      });
+    }
+    console.log(this.id)
+  }
+
+  ocultar() {
+    const questionToUpdate = this.questions.find(
+      (item: Question) => item.id === this.id
+    );
+    if (questionToUpdate) {
+      questionToUpdate.isDeleted=true;
+      this.questionService.updateQuestion(questionToUpdate).subscribe({
+        next: () => {
+          console.log('Voto atualizado com sucesso!');
+        },
+      });
+    }
+    console.log(this.id)
+  }
 }

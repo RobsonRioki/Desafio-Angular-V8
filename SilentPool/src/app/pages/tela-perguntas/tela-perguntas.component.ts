@@ -32,7 +32,7 @@ export class TelaPerguntasComponent implements OnInit {
   pergunta: string = '';
   codigo: string = '';
   id: string = '';
-  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) { }
+  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) {  setInterval(() => this.getPerguntas(), 5000);}
 
   questions: Array<Question> = [];
   dados: Array<Dados> = [];
@@ -56,7 +56,7 @@ export class TelaPerguntasComponent implements OnInit {
     this.questionService.getQuestions().subscribe({
       next: question => {
         this.questions = question.filter((item: Question) => item.workspace === String(this.codigo));
-        this.sortQuestionsByVote(); // Chama a função para organizar as perguntas por voto
+        this.sortQuestionsByVote(); 
       }
     });
   }
@@ -93,14 +93,14 @@ export class TelaPerguntasComponent implements OnInit {
       this.questionService.updateQuestion(questionToUpdate).subscribe({
         next: () => {
           console.log('Voto atualizado com sucesso!');
-          this.sortQuestionsByVote(); // Chama a função para organizar as perguntas por voto após a atualização do voto
+          this.sortQuestionsByVote(); 
         },
       });
     }
   }
 
   sortQuestionsByVote() {
-    // Ordena as perguntas com base no número de votos em ordem decrescente
+  
     this.questions.sort((a, b) => b.vote - a.vote);
   }
 }

@@ -27,7 +27,8 @@
             </app-container-pergunta>
             <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()" class="botaoEnviar"></app-button>
             <p class="textoInfo">Últimas perguntas</p>
-            <app-container-pergunta class="divPergunta" *ngFor = "let question of questions" >
+            <ng-container *ngFor="let question of questions">
+            <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted && !question.isReplied" >
                 <div class="divP1">
                     <p>Categoria: {{question.category}}</p>
                     <p>{{question.question}}</p>
@@ -37,6 +38,7 @@
                     <p>{{question.vote}}</p>
                 </div>
             </app-container-pergunta>
+        </ng-container>
         </div>
     </section>
 </app-container>
