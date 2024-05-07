@@ -1,22 +1,56 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../../shared/modal/modal.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { DadosService } from '../../services/dados.service';
+
+interface Dados {
+  createAt: number;
+  name: string;
+  code: number;
+  participants: number;
+  timeLeft: Date;
+  id: string;
+}
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit {
+  @Input() codigo: string = '';
+  code = '';
 
-  codigo = '';
+  constructor(
+    public dialog: MatDialog,
+    private router: Router,
+    private dadosService: DadosService,
+    private route: ActivatedRoute
+  ) {}
 
-  constructor(public dialog: MatDialog, private router: Router) {}
+  dados: Array<Dados> = [];
 
-  entrarSala(){
+  ngOnInit(): void {
+    this.code = this.route.snapshot.params['codigo'];
 
-    this.router.navigate(['/perguntas', this.codigo])
+    this.dadosService.getDados().subscribe({
+      next: (dado) => {
+        this.dados = dado;
+        console.log(this.dados);
+      },
+    });
+  }
+
+  entrarSala() {
+    const codigoExistente = this.dados.find((item) => item.code.toString() === this.codigo);
+
+    if (codigoExistente) {
+      this.router.navigate(['/perguntas', this.codigo]);
+    } else {
+
+      alert('Código inválido. Por favor, insira um código válido.');
+    }
   }
 
   openDialog() {
