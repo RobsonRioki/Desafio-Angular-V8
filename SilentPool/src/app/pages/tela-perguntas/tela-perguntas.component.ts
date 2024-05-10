@@ -71,17 +71,23 @@ export class TelaPerguntasComponent implements OnInit {
       workspace: this.codigo
     };
 
-    this.questionService.postQuestion(novaPergunta).subscribe({
-      next: () => {
-        console.log('Pergunta enviada com sucesso:');
-        this.categoria = '';
-        this.pergunta = '';
-        this.getPerguntas();
-      },
-      error: (error) => {
-        console.log(error);
-      }
-    });
+    // if( this.categoria != '' && this.pergunta != ''){
+
+      this.questionService.postQuestion(novaPergunta).subscribe({
+        next: () => {
+          console.log('Pergunta enviada com sucesso:');
+          this.categoria = '';
+          this.pergunta = '';
+          this.getPerguntas();
+        },
+        error: (error) => {
+          console.log(error);
+        }
+      });
+    // } else {
+    //   alert('Insira todos os campos')
+    // }
+
   }
 
   like(id: string) {

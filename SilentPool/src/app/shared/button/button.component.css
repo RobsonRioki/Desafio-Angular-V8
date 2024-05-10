@@ -8,8 +8,8 @@ button {
     width: 100px;
 }
 
-.size-350{
-    width: 350px;
+.size-410{
+    width: 410px;
 }
 
 
@@ -28,4 +28,5 @@ button {
     background-color: #84CC16;
     color: rgb(253, 236, 236);
     border: 1px solid;
+    margin-left: 10px;
 }

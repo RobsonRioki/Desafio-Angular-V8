@@ -58,8 +58,7 @@ export class TelaAdminComponent implements OnInit {
     });
 
     this.getPerguntas(); 
-
-
+    
     setInterval(() => this.getPerguntas(), 5000);
   }
 
@@ -103,7 +102,6 @@ export class TelaAdminComponent implements OnInit {
   }
 
   sortQuestionsByVote() {
-    
     this.questions.sort((a, b) => b.vote - a.vote);
   }
 }

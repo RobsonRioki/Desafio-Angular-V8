@@ -28,7 +28,7 @@
             <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()" class="botaoEnviar"></app-button>
             <p class="textoInfo">Últimas perguntas</p>
             <ng-container *ngFor="let question of questions">
-            <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted && !question.isReplied" >
+            <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted" [ngStyle]="{ 'background-color': question.isReplied ? 'rgb(101, 101, 172)' : 'var(--grey-100)' }" >
                 <div class="divP1">
                     <p>Categoria: {{question.category}}</p>
                     <p>{{question.question}}</p>
