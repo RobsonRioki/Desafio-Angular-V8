@@ -22,7 +22,7 @@ button {
 .secondary{
     background-color: rgba(255, 255, 255, 0.918);
     color: rgb(22, 21, 21);
-    border: 1px solid;
+    border: 1px solid #CBD5E1;
 }
 .tertiary{
     background-color: #84CC16;

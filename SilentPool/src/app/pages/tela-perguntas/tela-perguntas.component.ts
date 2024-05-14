@@ -71,7 +71,7 @@ export class TelaPerguntasComponent implements OnInit {
       workspace: this.codigo
     };
 
-    // if( this.categoria != '' && this.pergunta != ''){
+    if(this.pergunta != ''){
 
       this.questionService.postQuestion(novaPergunta).subscribe({
         next: () => {
@@ -84,9 +84,9 @@ export class TelaPerguntasComponent implements OnInit {
           console.log(error);
         }
       });
-    // } else {
-    //   alert('Insira todos os campos')
-    // }
+    } else {
+      alert('Insira uma pergunta')
+    }
 
   }
 

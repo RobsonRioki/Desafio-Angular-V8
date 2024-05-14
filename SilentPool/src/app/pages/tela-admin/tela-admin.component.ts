@@ -33,15 +33,15 @@ export class TelaAdminComponent implements OnInit {
   code: string = '';
   id: string = '';
 
+  questions: Array<Question> = [];
+  dados: Array<Dados> = [];
+
   constructor(
     private questionService: QuestionService,
     private dadosService: DadosService,
     private route: ActivatedRoute,
     private router: Router
   ) {}
-
-  questions: Array<Question> = [];
-  dados: Array<Dados> = [];
 
   ngOnInit(): void {
     const codigo = this.route.snapshot.params['codigo'];
@@ -55,21 +55,26 @@ export class TelaAdminComponent implements OnInit {
         );
         console.log(dado);
       },
+      error: (err) => {
+        console.error('Erro ao buscar dados:', err);
+      }
     });
 
-    this.getPerguntas(); 
-    
-    setInterval(() => this.getPerguntas(), 5000);
+    this.getPerguntas();
+
+    setInterval(() => this.getPerguntas(), 30000);
   }
 
   getPerguntas() {
     this.questionService.getQuestions().subscribe({
-      next: (questions) => {
+      next: questions => {
         this.questions = questions.filter(
-          (item: Question) => item.workspace === String(this.code)
-        );
+          (item: Question) => item.workspace === String(this.code));
         this.sortQuestionsByVote(); 
       },
+      error: (err) => {
+        console.error('Erro ao buscar perguntas:', err);
+      }
     });
   }
 
@@ -82,22 +87,27 @@ export class TelaAdminComponent implements OnInit {
       this.questionService.updateQuestion(questionToUpdate).subscribe({
         next: () => {
           console.log('Voto atualizado com sucesso!');
+          this.getPerguntas(); 
         },
+        error: (err) => {
+          console.error('Erro ao atualizar voto:', err);
+        }
       });
     }
   }
 
   atualizar() {
-   
     this.dadosService.getDados().subscribe({
       next: (dado) => {
         this.dados = dado.filter(
           (item: Dados) => String(item.code) === this.code
         );
       },
+      error: (err) => {
+        console.error('Erro ao buscar dados:', err);
+      }
     });
 
-    
     this.getPerguntas();
   }
 

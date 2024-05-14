@@ -12,7 +12,8 @@ export class QuestionService {
   private baseURL = 'https://65f84d6bdf151452460f1162.mockapi.io/api/v1'
 
   getQuestions() {
-    return this.httpClient.get<[]>(`${this.baseURL}/questions`)
+
+    return this.httpClient.get<[]>(`${this.baseURL}/questions`);
   }
 
   postQuestion(novaPergunta: any) {

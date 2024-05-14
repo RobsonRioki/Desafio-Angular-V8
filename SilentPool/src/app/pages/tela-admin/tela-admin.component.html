@@ -23,7 +23,7 @@
         </div>
         <div class="divPerguntas">
             <ng-container *ngFor="let question of questions">
-                <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted" [ngStyle]="{ 'background-color': question.isReplied ? 'rgb(101, 101, 172)' : 'var(--grey-100)' }">
+                <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted" [ngStyle]="{ 'background-color': question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white' }">
                     <div class="divP1">
                         <p>Categoria: {{question.category}}</p>
                         <p>{{question.question}}</p>
@@ -33,7 +33,7 @@
                             <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
                             <p>{{question.vote}}</p>
                         </div>
-                        <app-menu [id]="question.id"></app-menu>
+                        <app-menu [id]="question.id" [questions]="questions"></app-menu>
                     </div>
                 </app-container-pergunta>
             </ng-container>
