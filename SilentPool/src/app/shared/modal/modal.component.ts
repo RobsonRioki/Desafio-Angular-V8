@@ -46,18 +46,27 @@ export class ModalComponent {
       };
       
       
-      this.dadosService.postDados(novaSala).subscribe(
-        response => {
-          console.log('Sala enviada com sucesso:', response);
-          this.nomeSala = '';
-          this.tempo = 0;
+      this.dadosService.postDados(novaSala).subscribe({
+        next: () => {
+          this.router.navigate(['/admin', code]);
         },
-        error => {
+        error: (error) => {
           console.error('Erro ao criar sala:', error);
-        }
-      );
+        },
+      });
+
+      // this.dadosService.postDados(novaSala).subscribe(
+      //   response => {
+      //     console.log('Sala enviada com sucesso:', response);
+      //     this.nomeSala = '';
+      //     this.tempo = 0;
+      //   },
+      //   error => {
+      //     console.error('Erro ao criar sala:', error);
+      //   }
+      // );
       
-      this.router.navigate(['/admin', code])
+      // this.router.navigate(['/admin', code])
     }
   }
   

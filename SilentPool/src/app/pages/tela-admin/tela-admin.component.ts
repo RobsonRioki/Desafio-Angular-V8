@@ -96,20 +96,20 @@ export class TelaAdminComponent implements OnInit {
     }
   }
 
-  atualizar() {
-    this.dadosService.getDados().subscribe({
-      next: (dado) => {
-        this.dados = dado.filter(
-          (item: Dados) => String(item.code) === this.code
-        );
-      },
-      error: (err) => {
-        console.error('Erro ao buscar dados:', err);
-      }
-    });
+  // atualizar() {
+  //   this.dadosService.getDados().subscribe({
+  //     next: (dado) => {
+  //       this.dados = dado.filter(
+  //         (item: Dados) => String(item.code) === this.code
+  //       );
+  //     },
+  //     error: (err) => {
+  //       console.error('Erro ao buscar dados:', err);
+  //     }
+  //   });
 
-    this.getPerguntas();
-  }
+  //   this.getPerguntas();
+  // }
 
   sortQuestionsByVote() {
     this.questions.sort((a, b) => b.vote - a.vote);
