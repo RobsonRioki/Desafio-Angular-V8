@@ -48,6 +48,13 @@ export class TelaAdminComponent implements OnInit {
     console.log(this.code);
     this.code = codigo;
 
+    const codigoSalvo = localStorage.getItem('salaCodigo');
+     if (codigoSalvo !== this.code) {
+      alert('Você não tem permissão para acessar esta página.');
+      this.router.navigate(['/']); 
+      return;
+    }
+
     this.dadosService.getDados().subscribe({
       next: (dado) => {
         this.dados = dado.filter(
