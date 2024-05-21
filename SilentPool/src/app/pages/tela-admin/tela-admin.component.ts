@@ -77,7 +77,8 @@ export class TelaAdminComponent implements OnInit {
       next: questions => {
         this.questions = questions.filter(
           (item: Question) => item.workspace === String(this.code));
-        this.sortQuestionsByVote(); 
+          this.sortQuestionsByDeleted();
+        
       },
       error: (err) => {
         console.error('Erro ao buscar perguntas:', err);
@@ -118,7 +119,32 @@ export class TelaAdminComponent implements OnInit {
   //   this.getPerguntas();
   // }
 
-  sortQuestionsByVote() {
-    this.questions.sort((a, b) => b.vote - a.vote);
+  sortQuestionsByDeleted() {
+    this.questions.sort((a, b) => {
+
+      if (!a.isReplied && !a.isDeleted && !b.isReplied && !b.isDeleted) {
+        return 0;
+      }
+
+      else if (a.isDeleted && !b.isDeleted) {
+        return 1;
+      }
+      else if (!a.isDeleted && b.isDeleted) {
+        return -1;
+      }
+
+      else if (a.isReplied && !b.isReplied) {
+        return 1;
+      }
+      else if (!a.isReplied && b.isReplied) {
+        return -1;
+      }
+
+      else {
+        return b.vote - a.vote;
+      }
+    });
   }
+  
+  
 }
