@@ -73,4 +73,21 @@ export class MenuComponent implements OnInit {
     }
     console.log(this.id);
   }
+  desocultar(){
+    const questionToUpdate = this.questions.find(
+      (item: Question) => item.id === this.id
+    );
+    if (questionToUpdate) {
+      questionToUpdate.isDeleted = false;
+      this.questionService.updateQuestion(questionToUpdate).subscribe({
+        next: () => {
+          console.log('Pergunta ocultada com sucesso!');
+        },
+        error: (err) => {
+          console.error('Erro ao ocultar pergunta:', err);
+        }
+      });
+    }
+    console.log(this.id);
+  }
 }

@@ -69,7 +69,7 @@ export class TelaAdminComponent implements OnInit {
 
     this.getPerguntas();
 
-    setInterval(() => this.getPerguntas(), 30000);
+    setInterval(() => this.getPerguntas(), 15000);
   }
 
   getPerguntas() {
