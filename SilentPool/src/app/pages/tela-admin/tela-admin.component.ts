@@ -119,32 +119,42 @@ export class TelaAdminComponent implements OnInit {
   //   this.getPerguntas();
   // }
 
+  // sortQuestionsByDeleted() {
+  //   this.questions.sort((a, b) => {
+
+  //     if (!a.isReplied && !a.isDeleted && !b.isReplied && !b.isDeleted) {
+  //       return 0;
+  //     }
+
+  //     else if (a.isDeleted && !b.isDeleted) {
+  //       return 1;
+  //     }
+  //     else if (!a.isDeleted && b.isDeleted) {
+  //       return -1;
+  //     }
+
+  //     else if (a.isReplied && !b.isReplied) {
+  //       return 1;
+  //     }
+  //     else if (!a.isReplied && b.isReplied) {
+  //       return -1;
+  //     }
+
+  //     else {
+  //       return b.vote - a.vote;
+  //     }
+  //   });
+  // }
   sortQuestionsByDeleted() {
     this.questions.sort((a, b) => {
-
-      if (!a.isReplied && !a.isDeleted && !b.isReplied && !b.isDeleted) {
-        return 0;
+      if (a.isDeleted !== b.isDeleted) {
+        return a.isDeleted ? 1 : -1;
       }
-
-      else if (a.isDeleted && !b.isDeleted) {
-        return 1;
+      if (a.isReplied !== b.isReplied) {
+        return a.isReplied ? 1 : -1;
       }
-      else if (!a.isDeleted && b.isDeleted) {
-        return -1;
-      }
-
-      else if (a.isReplied && !b.isReplied) {
-        return 1;
-      }
-      else if (!a.isReplied && b.isReplied) {
-        return -1;
-      }
-
-      else {
-        return b.vote - a.vote;
-      }
+      return b.vote - a.vote;
     });
   }
-  
   
 }
