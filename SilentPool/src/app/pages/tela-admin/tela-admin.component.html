@@ -5,7 +5,6 @@
     <section class="sectionSalaPerguntas">
         <div class="divAdmin">
             <h1 class="tituloAdmin">Você está como moderador</h1>
-
             <div class="informacoesSala" *ngFor="let dado of dados">
                 <ul>
                     <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
@@ -19,9 +18,21 @@
                     routerLink="/"></app-button>
             </div>
         </div>
+        <div class="divAdminMobile">
+            <div class="informacoesSala" *ngFor="let dado of dados">
+                <h1 class="tituloAdmin">Você está como moderador</h1>
+                <ul>
+                    <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
+                    <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
+                    <!-- <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
+                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li> -->
+                </ul>
+            </div>
+        </div>
         <div class="divPerguntas">
             <ng-container *ngFor="let question of questions">
-                <app-container-pergunta class="divPergunta" [ngStyle]="{ 'background-color': question.isDeleted ? 'rgba(255, 0, 0, 0.2)' : (question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white') }">
+                <app-container-pergunta class="divPergunta"
+                    [ngStyle]="{ 'background-color': question.isDeleted ? 'rgba(255, 0, 0, 0.2)' : (question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white') }">
                     <div class="divP1">
                         <p *ngIf="question.category">Categoria: {{question.category}}</p>
                         <p>{{question.question}}</p>

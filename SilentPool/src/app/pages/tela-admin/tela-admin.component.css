@@ -8,7 +8,7 @@
 } */
 
 
-.divTituloSilentPoll{
+.divTituloSilentPoll {
     display: flex;
     max-width: 100vw;
     width: auto;
@@ -16,16 +16,16 @@
     align-items: center;
 }
 
-.tituloSilentPoll{
+.tituloSilentPoll {
     font-family: 'Bebas Neue';
     font-size: 48px;
 }
 
- .sectionSalaPerguntas{
+.sectionSalaPerguntas {
     display: flex;
     justify-content: space-around;
     background-color: var(--grey-100);
-     /* background-color: red;  */
+    /* background-color: red;  */
     width: 90vw;
     height: 85vh;
     border-radius: var(--borderr-20);
@@ -33,13 +33,13 @@
 
 }
 
-.divAdmin{
+.divAdmin {
     display: flex;
     flex-direction: column;
     align-items: center;
     background-color: #FAFAFA;
     border-radius: 20px 0 0 20px;
-    width:90vw;
+    width: 90vw;
     /* width: 560px; */
     justify-content: space-between;
     height: 100%;
@@ -47,11 +47,11 @@
     padding: 40px 0;
 }
 
-.tituloAdmin{
-margin-top: 80px;
+.tituloAdmin {
+    margin-top: 80px;
 }
 
-.informacoesSala{
+.informacoesSala {
     display: flex;
     flex-direction: column;
 }
@@ -64,7 +64,7 @@ margin-top: 80px;
     border-radius: 8px;
     background-color: #e7e7e7;
     border: 1px solid #cacaca;
-    
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -74,7 +74,7 @@ margin-top: 80px;
     background-color: var(--blue-800);
 }
 
-.divPerguntas{
+.divPerguntas {
     display: flex;
     background-color: var(--grey-100);
     width: 90vw;
@@ -88,7 +88,7 @@ margin-top: 80px;
 }
 
 
-.divPergunta{
+.divPergunta {
     margin: 15px 10px;
     display: flex;
     background-color: rgb(255, 255, 255);
@@ -100,12 +100,12 @@ margin-top: 80px;
     font-weight: normal;
 }
 
-.listaInformacoesSala{
+.listaInformacoesSala {
     list-style-type: none;
     font-weight: normal;
 }
 
-.divIcones{
+.divIcones {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,24 +113,50 @@ margin-top: 80px;
     justify-content: space-between;
 }
 
-.divIconeNumero{
+.divIconeNumero {
     display: flex;
     width: 100%;
     flex-direction: row;
 }
 
-.divIcones p{
-    margin: 5px; 
+.divIcones p {
+    margin: 5px;
 }
 
 
-.divP1{
+.divP1 {
     display: flex;
     flex-direction: column;
 }
 
-    
+.divAdminMobile {
+    display: none;
+}
 
-/* mat-icon {
-    cursor: pointer;
-} */
+@media screen and (max-width: 1025px) {
+
+.divAdmin{
+    display: none;
+}
+
+.divAdminMobile{
+    display: flex;
+}
+
+.sectionSalaPerguntas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divPerguntas{
+    max-width: 100%;
+}
+
+.tituloAdmin{
+    margin-top: 0;
+    padding: 10px;
+}
+
+}
