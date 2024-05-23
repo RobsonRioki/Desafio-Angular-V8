@@ -234,5 +234,15 @@ mat-icon {
         display: flex;
         justify-content: space-around;
         gap: 40px;
+        padding: 15px;
+    }
+
+    .enviar-btn{
+        width: 90%;
+        display: flex;
+    }
+
+    .botaoEnviar {
+        margin: px;
     }
 }

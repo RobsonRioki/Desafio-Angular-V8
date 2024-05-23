@@ -19,7 +19,6 @@
         </div>
         <div class="divAdminMobile">
             <div class="informacoesSala" *ngFor="let dado of dados">
-                <h1 class="tituloAdmin">Você está como moderador</h1>
                 <div class="info-btn">
                     <ul>
                         <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
@@ -44,7 +43,10 @@
                     [(ngModel)]="pergunta">
 
             </app-container-pergunta>
-            <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()" class="botaoEnviar"></app-button>
+            <div class="enviar-btn">
+                <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()"
+                    class="botaoEnviar"></app-button>
+            </div>
             <p class="textoInfo">Últimas perguntas</p>
             <ng-container *ngFor="let question of questions">
                 <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted"
