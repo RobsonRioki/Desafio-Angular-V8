@@ -94,6 +94,10 @@ export class TelaPerguntasComponent implements OnInit {
     const questionToUpdate = this.questions.find(
       (item: Question) => item.id === id
     );
+    if (questionToUpdate?.isReplied){
+      
+    }else{
+    
     if (questionToUpdate) {
       questionToUpdate.vote++;
       this.questionService.updateQuestion(questionToUpdate).subscribe({
@@ -103,6 +107,7 @@ export class TelaPerguntasComponent implements OnInit {
         },
       });
     }
+  }
   }
 
   // 
