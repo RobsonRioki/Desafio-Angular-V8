@@ -7,7 +7,7 @@
     margin: 10px 0;
 } */
 
-.divTituloSilentPoll{
+.divTituloSilentPoll {
     display: flex;
     max-width: 100vw;
     width: auto;
@@ -15,23 +15,24 @@
     align-items: center;
 }
 
-.tituloSilentPoll{
+.tituloSilentPoll {
     font-family: 'Bebas Neue';
     font-size: 48px;
 }
 
- .sectionSalaPerguntas{
+.sectionSalaPerguntas {
     display: flex;
     justify-content: space-around;
     background-color: var(--grey-100);
-     /* background-color: red;  */
+    /* background-color: red;  */
     width: 90vw;
     height: 85vh;
     border-radius: var(--borderr-20);
     flex-direction: row;
 
 }
-.divAdmin{
+
+.divAdmin {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -46,7 +47,7 @@
     padding: 40px 0;
 }
 
-.informacoesSala{
+.informacoesSala {
     display: flex;
     flex-direction: column;
     margin-top: 30%;
@@ -60,7 +61,7 @@
     border-radius: 8px;
     background-color: #e7e7e7;
     border: 1px solid #cacaca;
-    
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -70,7 +71,7 @@
     background-color: var(--blue-800);
 }
 
-.divPerguntas{
+.divPerguntas {
     padding: 10px;
     display: flex;
     background-color: var(--grey-100);
@@ -85,11 +86,11 @@
     flex-direction: column;
 }
 
-.textoInfo{
+.textoInfo {
     margin: 5px;
 }
 
-.divPergunta{
+.divPergunta {
     margin: 15px 0px;
     display: flex;
     /* background-color: rgb(255, 255, 255); */
@@ -103,7 +104,7 @@
 
 
 
-.divInserirPergunta{
+.divInserirPergunta {
     display: flex;
     /* max-width: 50vh; */
     width: 81vh;
@@ -113,7 +114,7 @@
     margin-bottom: 20px;
 }
 
-.inputCategoria{
+.inputCategoria {
     border: 1px solid #0000001A;
     width: 79vh;
     border-radius: 4px;
@@ -123,7 +124,7 @@
     padding: 5px;
 }
 
-.inputPergunta{
+.inputPergunta {
     border: 1px solid #0000001A;
     border-radius: 4px;
     margin: 10px;
@@ -132,18 +133,18 @@
     padding: 5px;
 }
 
-.botaoEnviar{
+.botaoEnviar {
     display: flex;
     justify-content: end;
     margin: 5px;
 }
 
-.listaInformacoesSala{
+.listaInformacoesSala {
     list-style-type: none;
     font-weight: normal;
 }
 
-.divIcones{
+.divIcones {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -152,17 +153,86 @@
     flex-direction: row;
 }
 
-.divIcones p{
+.divIcones p {
     margin: 10px;
 }
 
-.divP1{
+.divP1 {
     display: flex;
     flex-direction: column;
 }
 
-    
-
 mat-icon {
     cursor: pointer;
+}
+
+.divAdminMobile {
+    display: none;
+}
+
+@media screen and (max-width: 1025px) {
+
+    .divAdmin {
+        display: none;
+    }
+
+    .divAdminMobile {
+        display: flex;
+    }
+
+    .sectionSalaPerguntas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .divPerguntas {
+        max-width: 100%;
+        align-items: center;
+    }
+
+    .divPergunta[_ngcontent-ng-c1009619344]  {
+        margin: 15px 0px;
+        display: flex;
+        max-width: 100%;
+        width: 100%;
+        height: 100px;
+        justify-content: space-between;
+        padding: 10px;
+        font-weight: normal;
+    }
+
+    .tituloAdmin {
+        margin-top: 0;
+        padding: 10px;
+    }
+
+    .informacoesSala {
+        align-items: center;
+        margin-top: 0;
+    }
+
+    .inputCategoria[_ngcontent-ng-c1713425990] {
+        width: 98%;
+    }
+
+    .inputPergunta[_ngcontent-ng-c1713425990] {
+        width: 98%;
+    }
+
+    .divInserirPergunta[_ngcontent-ng-c1713425990] {
+        display: flex;
+        width: 100%;
+        border-radius: 6px;
+        flex-direction: column;
+        margin-bottom: 20px;
+        align-items: center;
+    }
+    
+    .info-btn {
+        display: flex;
+        justify-content: space-around;
+        gap: 40px;
+    }
 }

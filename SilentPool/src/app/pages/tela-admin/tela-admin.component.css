@@ -135,28 +135,42 @@
 
 @media screen and (max-width: 1025px) {
 
-.divAdmin{
-    display: none;
-}
+    .divAdmin {
+        display: none;
+    }
 
-.divAdminMobile{
-    display: flex;
-}
+    .divAdminMobile {
+        display: flex;
+    }
 
-.sectionSalaPerguntas{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+    .sectionSalaPerguntas {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 
-.divPerguntas{
-    max-width: 100%;
-}
+    .divPerguntas {
+        max-width: 100%;
+    }
 
-.tituloAdmin{
-    margin-top: 0;
-    padding: 10px;
-}
+    .divPergunta[_ngcontent-ng-c3326438249] {
+        max-width: 100%;
 
-}
+    }
+        .tituloAdmin {
+            margin-top: 0;
+            padding: 10px;
+        }
+
+        .informacoesSala {
+            align-items: center;
+        }
+
+        .info-btn {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+        }
+
+    }

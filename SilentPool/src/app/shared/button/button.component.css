@@ -39,4 +39,11 @@ button {
     .size-410{
         width: 300px;
     }
+
+    button {
+        border: 0px;
+        height: 30px;
+        font-size: 10px;
+        border-radius: var(--borderr);
+    }
 } 
