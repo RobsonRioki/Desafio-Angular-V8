@@ -95,9 +95,8 @@ export class TelaPerguntasComponent implements OnInit {
       (item: Question) => item.id === id
     );
     if (questionToUpdate?.isReplied){
-      
+      console.log("Pergunta já respondida, não foi possivel atualizar voto")
     }else{
-    
     if (questionToUpdate) {
       questionToUpdate.vote++;
       this.questionService.updateQuestion(questionToUpdate).subscribe({
