@@ -154,23 +154,24 @@
         max-width: 100%;
     }
 
-    .divPergunta[_ngcontent-ng-c3326438249] {
+    .divPergunta {
         max-width: 100%;
 
     }
-        .tituloAdmin {
-            margin-top: 0;
-            padding: 10px;
-        }
 
-        .informacoesSala {
-            align-items: center;
-        }
-
-        .info-btn {
-            display: flex;
-            justify-content: space-around;
-            gap: 40px;
-        }
-
+    .tituloAdmin {
+        margin-top: 0;
+        padding: 10px;
     }
+
+    .informacoesSala {
+        align-items: center;
+    }
+
+    .info-btn {
+        display: flex;
+        justify-content: space-around;
+        gap: 40px;
+    }
+
+}

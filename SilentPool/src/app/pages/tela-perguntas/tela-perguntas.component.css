@@ -192,7 +192,7 @@ mat-icon {
         align-items: center;
     }
 
-    .divPergunta[_ngcontent-ng-c1009619344]  {
+    .divPergunta{
         margin: 15px 0px;
         display: flex;
         max-width: 100%;
@@ -213,15 +213,15 @@ mat-icon {
         margin-top: 0;
     }
 
-    .inputCategoria[_ngcontent-ng-c1009619344]  {
+    .inputCategoria{
         width: 98%;
     }
 
-    .inputPergunta[_ngcontent-ng-c1009619344] {
+    .inputPergunta {
         width: 98%;
     }
 
-    .divInserirPergunta[_ngcontent-ng-c1009619344]  {
+    .divInserirPergunta {
         display: flex;
         width: 100%;
         border-radius: 6px;
@@ -229,7 +229,7 @@ mat-icon {
         margin-bottom: 20px;
         align-items: center;
     }
-    
+
     .info-btn {
         display: flex;
         justify-content: space-around;
