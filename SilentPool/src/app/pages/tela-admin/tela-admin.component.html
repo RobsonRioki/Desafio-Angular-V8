@@ -43,7 +43,7 @@
                         <p *ngIf="question.category">Categoria: {{question.category}}</p>
                         <p>{{question.question}}</p>
                     </div>
-                    <div class="status" *ngIf="question.isReplied">
+                    <div class="status" *ngIf="question.isReplied" [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
                         <span>Respondida</span>
                     </div>
                     <div class="status" *ngIf="question.isDeleted">
