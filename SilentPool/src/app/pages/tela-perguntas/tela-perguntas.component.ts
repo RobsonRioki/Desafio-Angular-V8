@@ -32,7 +32,7 @@ export class TelaPerguntasComponent implements OnInit {
   pergunta: string = '';
   codigo: string = '';
   id: string = '';
-  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) {  setInterval(() => this.getPerguntas(), 1500000);}
+  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) {  setInterval(() => this.getPerguntas(), 20000);}
 
   questions: Array<Question> = [];
   dados: Array<Dados> = [];
