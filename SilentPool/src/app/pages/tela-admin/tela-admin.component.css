@@ -90,16 +90,21 @@
 
 .divPergunta {
     position: relative;
-    margin: 15px 10px;
+    margin: 15px 0px;
     display: flex;
-    background-color: rgb(255, 255, 255);
     max-width: 90vh;
     width: auto;
-    height: 100px;
+    height: fit-content;
     justify-content: space-between;
     padding: 10px;
     font-weight: normal;
+    gap: 15px;
 }   
+
+.divP1{
+    max-width: 100%;
+    word-break: break-all;
+}
 
 .status {
     position: absolute;
@@ -136,7 +141,6 @@
 
 .divIconeNumero {
     display: flex;
-    width: 100%;
     flex-direction: row;
 }
 
@@ -177,7 +181,8 @@
 
     .divPergunta {
         max-width: 100%;
-
+        height: fit-content;
+        gap: 8px;
     }
 
     .tituloAdmin {
