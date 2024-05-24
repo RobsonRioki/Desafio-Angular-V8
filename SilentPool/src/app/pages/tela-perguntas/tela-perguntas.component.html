@@ -53,7 +53,15 @@
                     [ngStyle]="{ 'background-color': question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white' }">
                     <div class="divP1">
                         <p *ngIf="question.category">Categoria: {{question.category}}</p>
-                        <p>{{question.question}}</p>
+                        <div>
+                            <p>{{question.question}}</p>
+                        </div>
+                    </div>
+                    <div class="status" *ngIf="question.isReplied">
+                        <span>Respondida</span>
+                    </div>
+                    <div class="status" *ngIf="question.isDeleted">
+                        <span>Ocultada</span>
                     </div>
                     <div class="divIcones">
                         <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>

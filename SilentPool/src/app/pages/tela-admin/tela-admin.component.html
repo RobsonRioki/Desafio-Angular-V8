@@ -43,6 +43,12 @@
                         <p *ngIf="question.category">Categoria: {{question.category}}</p>
                         <p>{{question.question}}</p>
                     </div>
+                    <div class="status" *ngIf="question.isReplied">
+                        <span>Respondida</span>
+                    </div>
+                    <div class="status" *ngIf="question.isDeleted">
+                        <span>Ocultada</span>
+                    </div>
                     <div class="divIcones">
                         <div class="divIconeNumero">
                             <mat-icon fontIcon="thumb_up"></mat-icon>
