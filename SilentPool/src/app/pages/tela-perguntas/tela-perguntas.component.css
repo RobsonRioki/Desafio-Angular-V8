@@ -7,6 +7,15 @@
     margin: 10px 0;
 } */
 
+
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
 .divTituloSilentPoll {
     display: flex;
     max-width: 100vw;
@@ -132,6 +141,10 @@
     border-radius: 6px;
     flex-direction: column;
     margin-bottom: 20px;
+    max-width: 83vh;
+    background-color: white;
+    border: 1px solid #E2E8F0;
+    border-radius: var(--borderr);
 }
 
 .inputCategoria {
@@ -238,12 +251,8 @@ mat-icon {
     }
 
     .divInserirPergunta {
-        display: flex;
         width: 100%;
-        border-radius: 6px;
-        flex-direction: column;
-        margin-bottom: 20px;
-        align-items: center;
+        max-width: 100%;
     }
 
     .info-btn {

@@ -1,4 +1,4 @@
-<app-container>
+<div class="container">
     <div class="divTituloSilentPoll">
         <h1 class="tituloSilentPoll">SILENT P O L L</h1>
     </div>
@@ -35,40 +35,22 @@
         </div>
         <div class="divPerguntas">
             <p class="textoInfo">Digite sua pergunta</p>
-            <app-container-pergunta class="divInserirPergunta">
+            <div class="divInserirPergunta">
 
                 <input type="text" maxlength="10" placeholder="Categoria" class="inputCategoria"
                     [(ngModel)]="categoria">
                 <input type="text" maxlength="250" placeholder="Sua pergunta aqui" class="inputPergunta"
                     [(ngModel)]="pergunta">
 
-            </app-container-pergunta>
+            </div>
             <div class="enviar-btn">
                 <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()"
                     class="botaoEnviar"></app-button>
             </div>
             <p class="textoInfo">Últimas perguntas</p>
             <ng-container *ngFor="let question of questions">
-                <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted"
-                    [ngStyle]="{ 'background-color': question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white' }">
-                    <div class="divP1">
-                        <p *ngIf="question.category">Categoria: {{question.category}}</p>
-                        <div>
-                            <p>{{question.question}}</p>
-                        </div>
-                    </div>
-                    <div class="status" *ngIf="question.isReplied" [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
-                        <span>Respondida</span>
-                    </div>
-                    <div class="status" *ngIf="question.isDeleted">
-                        <span>Ocultada</span>
-                    </div>
-                    <div class="divIcones">
-                        <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
-                        <p>{{question.vote}}</p>
-                    </div>
-                </app-container-pergunta>
+                <app-card-pergunta [questions]="questions" [question]="question" (likeClicked)="like($event)"></app-card-pergunta>
             </ng-container>
         </div>
     </section>
-</app-container>
+</div>
