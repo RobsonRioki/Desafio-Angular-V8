@@ -99,9 +99,14 @@
     padding: 10px;
     font-weight: normal;
     gap: 15px;
-}   
+}
 
-.divP1{
+.divBotao {
+    display: flex;
+    gap: 40px;
+}
+
+.divP1 {
     max-width: 100%;
     word-break: break-all;
 }
@@ -196,8 +201,14 @@
 
     .info-btn {
         display: flex;
-        justify-content: space-around;
+        /* justify-content: space-evenly; */
         gap: 40px;
+        font-size: 10pt;
+        margin: 15px;
+    }
+
+    .divBotao {
+        gap: 1px;
     }
 
 }

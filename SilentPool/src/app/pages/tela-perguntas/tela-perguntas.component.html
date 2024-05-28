@@ -57,7 +57,8 @@
                             <p>{{question.question}}</p>
                         </div>
                     </div>
-                    <div class="status" *ngIf="question.isReplied" [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
+                    <div class="status" *ngIf="question.isReplied"
+                        [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
                         <span>Respondida</span>
                     </div>
                     <div class="status" *ngIf="question.isDeleted">
