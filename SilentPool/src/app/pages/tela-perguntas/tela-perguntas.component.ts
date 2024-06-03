@@ -61,17 +61,20 @@ export class TelaPerguntasComponent implements OnInit {
     });
   }
 
-  inserirPergunta(): void {
+  onQuestionSubmitted(data: { categoria: string, pergunta: string }) {
+    console.log(data.categoria, data.pergunta);
+
     const novaPergunta = {
-      category: this.categoria,
-      question: this.pergunta,
+      category: data.categoria,
+      question: data.pergunta,
       vote: 0,
       isDeleted: false,
       isReplied: false,
       workspace: this.codigo
     };
 
-    if(this.pergunta != ''){
+    console.log(novaPergunta)
+    if(data.pergunta != ''){
 
       this.questionService.postQuestion(novaPergunta).subscribe({
         next: () => {
@@ -87,7 +90,6 @@ export class TelaPerguntasComponent implements OnInit {
     } else {
       alert('Insira uma pergunta')
     }
-
   }
 
   like(id: string) {
@@ -109,7 +111,6 @@ export class TelaPerguntasComponent implements OnInit {
   }
   }
 
-  // 
   sortQuestionsByDeleted() {
     this.questions.sort((a, b) => {
       if (a.isDeleted !== b.isDeleted) {

@@ -6,7 +6,24 @@
     flex-direction: column;
     margin: 10px 0;
 } */
-.container{
+
+.divPerguntas {
+    padding: 10px;
+    display: flex;
+    background-color: var(--grey-100);
+    /* max-width: 50vh; */
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    /* max-width: 50%; */
+    height: auto;
+    max-height: 100vh;
+    border-radius: 0 20px 20px 0;
+    flex-direction: column;
+}
+
+
+.container {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -32,7 +49,6 @@
     display: flex;
     justify-content: space-around;
     background-color: var(--grey-100);
-    /* background-color: red;  */
     width: 90vw;
     height: 85vh;
     border-radius: var(--borderr-20);
@@ -40,28 +56,14 @@
 
 }
 
+.divPerguntas {
+    width: 100%;
+}
+
 .divAdmin {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #FAFAFA;
-    border-radius: 20px 0 0 20px;
-    width: 90vw;
-    /* width: 560px; */
-    justify-content: space-between;
-    height: 100%;
-    /* margin-left: -50px; */
-    padding: 40px 0;
+    width: 100%;
 }
 
-.tituloAdmin {
-    margin-top: 80px;
-}
-
-.informacoesSala {
-    display: flex;
-    flex-direction: column;
-}
 
 ::-webkit-scrollbar {
     width: 10px;
@@ -80,143 +82,67 @@
     background-clip: content-box;
     background-color: var(--blue-800);
 }
-
-.divPerguntas {
-    display: flex;
-    background-color: var(--grey-100);
-    width: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /* max-width: 50%; */
-    height: 85vh;
-    max-height: 100vh;
-    border-radius: 0 20px 20px 0;
-    flex-direction: column;
-    padding: 5px;
+@media screen and (max-width: 1025px){
+.divAdmin {
+    display:flex;
+    margin: 0;
+    justify-content: center;
 }
 
 
-.divPergunta {
-    position: relative;
-    margin: 10px;
+.sectionSalaPerguntas {
     display: flex;
-    max-width: 90vh;
-    width: auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.divPerguntas {
+    max-width: 100%;
+    align-items: center;
+}
+
+.divPergunta {
+    margin: 15px 0px;
+    display: flex;
+    max-width: 100%;
+    width: 100%;
     height: fit-content;
     justify-content: space-between;
     padding: 10px;
     font-weight: normal;
-    gap: 15px;
+    gap: 8px;
 }
 
-.divBotao {
-    display: flex;
-    gap: 40px;
+.tituloAdmin {
+    margin-top: 0;
+    padding: 10px;
 }
 
-.divP1 {
-    max-width: 100%;
-    word-break: break-all;
-}
-
-.status {
-    position: absolute;
-    transform: translateX(-50%) translateY(-50%);
-    top: 50%;
-    left: 50%;
-    background-color: var(--grey-100);
-    border-radius: var(--borderr-20);
-    padding: 5px;
-    font-size: 20pt;
-    cursor: pointer;
-    transition: opacity 0.3s, visibility 0.3s;
-}
-
-.status:hover {
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-
-.listaInformacoesSala {
-    list-style-type: none;
-    font-weight: normal;
-}
-
-.divIcones {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.informacoesSala {
     align-items: center;
-    justify-content: space-between;
+    margin-top: 0;
 }
 
-.divIconeNumero {
+.inputCategoria {
+    width: 98%;
+}
+
+.inputPergunta {
+    width: 98%;
+}
+
+
+
+.info-btn {
     display: flex;
-    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+    padding: 15px;
 }
 
-.divIcones p {
-    margin: 5px;
-}
-
-
-.divP1 {
+.enviar-btn {
+    width: 90%;
     display: flex;
-    flex-direction: column;
 }
-
-.divAdminMobile {
-    display: none;
-}
-
-@media screen and (max-width: 1025px) {
-
-    .divAdmin {
-        display: none;
-    }
-
-    .divAdminMobile {
-        display: flex;
-    }
-
-    .sectionSalaPerguntas {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-    }
-
-    .divPerguntas {
-        max-width: 100%;
-    }
-
-    .divPergunta {
-        max-width: 100%;
-        height: fit-content;
-        gap: 8px;
-    }
-
-    .tituloAdmin {
-        margin-top: 0;
-        padding: 10px;
-    }
-
-    .informacoesSala {
-        align-items: center;
-    }
-
-    .info-btn {
-        display: flex;
-        /* justify-content: space-evenly; */
-        gap: 40px;
-        font-size: 10pt;
-        margin: 15px;
-    }
-
-    .divBotao {
-        gap: 1px;
-    }
-
 }

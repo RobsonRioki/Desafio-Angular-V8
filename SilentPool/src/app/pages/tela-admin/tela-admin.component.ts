@@ -45,10 +45,11 @@ export class TelaAdminComponent implements OnInit {
 
   ngOnInit(): void {
     const codigo = this.route.snapshot.params['codigo'];
+    console.log(this.code);
     this.code = codigo;
 
     const codigoSalvo = localStorage.getItem('salaCodigo');
-    if (codigoSalvo !== this.code) {
+     if (codigoSalvo !== this.code) {
       alert('Você não tem permissão para acessar esta página.');
       this.router.navigate(['/']); 
       return;
@@ -59,6 +60,7 @@ export class TelaAdminComponent implements OnInit {
         this.dados = dado.filter(
           (item: Dados) => String(item.code) === codigo
         );
+        console.log(dado);
       },
       error: (err) => {
         console.error('Erro ao buscar dados:', err);
@@ -76,6 +78,7 @@ export class TelaAdminComponent implements OnInit {
         this.questions = questions.filter(
           (item: Question) => item.workspace === String(this.code));
           this.sortQuestionsByDeleted();
+        
       },
       error: (err) => {
         console.error('Erro ao buscar perguntas:', err);
@@ -102,20 +105,18 @@ export class TelaAdminComponent implements OnInit {
   }
 
   baixarCSV(data: any, filename: string) {
-    const replacer = (_key: string, value: any) => (value === null ? '' : value); 
+    const replacer = (_key: string, value: any) => (value === null ? '' : value);
     const header = Object.keys(data[0]);
     const csv = data.map((row: { [x: string]: any; }) =>
-      header
-        .map((fieldName) => JSON.stringify(row[fieldName], replacer))
-        .join(',')
+      header.map((fieldName) => JSON.stringify(row[fieldName], replacer)).join(',')
     );
     csv.unshift(header.join(','));
     const csvArray = csv.join('\r\n');
-  
+
     const a = document.createElement('a');
     const blob = new Blob([csvArray], { type: 'text/csv' });
     const url = window.URL.createObjectURL(blob);
-  
+
     a.href = url;
     a.download = `${filename}.csv`;
     a.click();
@@ -123,7 +124,7 @@ export class TelaAdminComponent implements OnInit {
     a.remove();
   }
 
-   exportarQuestions() {
+  onBaixarPerguntas() {
     if (this.questions.length > 0) {
       const filteredQuestions = this.questions.map(({ category, question, vote, workspace }) => ({ category, question, vote, workspace }));
       this.baixarCSV(filteredQuestions, 'questions');

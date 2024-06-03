@@ -4,70 +4,13 @@
     </div>
     <section class="sectionSalaPerguntas">
         <div class="divAdmin">
-            <div class="informacoesSala" *ngFor="let dado of dados">
-                <ul>
-                    <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
-                    <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
-                    <!-- <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
-                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li> -->
-                </ul>
-            </div>
-            <div class="divBotao">
-                <app-button typeBtn="primary" textBtn="Sair da sala" onclick="encerrarSala()"
-                    routerLink="/"></app-button>
-            </div>
-        </div>
-        <div class="divAdminMobile">
-            <div class="informacoesSala" *ngFor="let dado of dados">
-                <div class="info-btn">
-                    <ul>
-                        <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
-                        <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
-                        <!-- <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
-                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li> -->
-                    </ul>
-                    <div class="divBotao">
-                        <app-button typeBtn="primary" textBtn="Sair da sala" onclick="encerrarSala()"
-                            routerLink="/"></app-button>
-                    </div>
-                </div>
-            </div>
+            <app-admin-panel [dados]="dados"></app-admin-panel>
         </div>
         <div class="divPerguntas">
-            <p class="textoInfo">Digite sua pergunta</p>
-            <div class="divInserirPergunta">
-
-                <input type="text" maxlength="10" placeholder="Categoria" class="inputCategoria"
-                    [(ngModel)]="categoria">
-                <input type="text" maxlength="250" placeholder="Sua pergunta aqui" class="inputPergunta"
-                    [(ngModel)]="pergunta">
-
-            </div>
-            <div class="enviar-btn">
-                <app-button typeBtn="primary" textBtn="Enviar" (click)="inserirPergunta()"
-                    class="botaoEnviar"></app-button>
-            </div>
+        <app-ask-form (questionSubmitted)="onQuestionSubmitted($event)"></app-ask-form>
             <p class="textoInfo">Últimas perguntas</p>
             <ng-container *ngFor="let question of questions">
-                <app-container-pergunta class="divPergunta" *ngIf="!question.isDeleted"
-                    [ngStyle]="{ 'background-color': question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white' }">
-                    <div class="divP1">
-                        <p *ngIf="question.category">Categoria: {{question.category}}</p>
-                        <div>
-                            <p>{{question.question}}</p>
-                        </div>
-                    </div>
-                    <div class="status" *ngIf="question.isReplied"
-                        [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
-                        <span>Respondida</span>
-                    </div>
-                    <div class="status" *ngIf="question.isDeleted">
-                        <span>Ocultada</span>
-                    </div>
-                    <div class="divIcones">
-                        <mat-icon fontIcon="thumb_up" (click)="like(question.id)"></mat-icon>
-                        <p>{{question.vote}}</p>
-                    </div>
+                <app-container-pergunta [isAdmin]="false" (likeClicked)="like($event)" [question]="question" [questions]="questions" *ngIf="!question.isDeleted">
                 </app-container-pergunta>
             </ng-container>
         </div>

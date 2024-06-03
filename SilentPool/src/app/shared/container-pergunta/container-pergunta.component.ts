@@ -1,12 +1,14 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 @Component({
-  selector: 'app-card-pergunta',
-  templateUrl: './card-pergunta.component.html',
-  styleUrl: './card-pergunta.component.css'
+  selector: 'app-container-pergunta',
+  templateUrl: './container-pergunta.component.html',
+  styleUrl: './container-pergunta.component.css'
 })
-export class CardPerguntaComponent {
+export class ContainerPerguntaComponent {
   @Input() question: any;
   @Input() questions!: any[];
+  @Input() isAdmin!: boolean;
   @Output() likeClicked = new EventEmitter<string>();
 
   onLikeClick(id: string) {

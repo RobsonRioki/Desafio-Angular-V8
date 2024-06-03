@@ -4,62 +4,11 @@
     </div>
     <section class="sectionSalaPerguntas">
         <div class="divAdmin">
-            <h1 class="tituloAdmin">Você está como moderador</h1>
-            <div class="informacoesSala" *ngFor="let dado of dados">
-                <ul>
-                    <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
-                    <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
-                    <!-- <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
-                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li> -->
-                </ul>
-            </div>
-            <div class="divBotao">
-                <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"
-                    routerLink="/"></app-button>
-                <app-button typeBtn="primary" textBtn="Baixar perguntas" (click)="exportarQuestions()"></app-button>
-            </div>
-        </div>
-        <div class="divAdminMobile">
-            <div class="informacoesSala" *ngFor="let dado of dados">
-                <h1 class="tituloAdmin">Você está como moderador</h1>
-                <div class="info-btn">
-                    <ul>
-                        <li class="listaInformacoesSala">Nome da sala: <strong>{{dado.name}}</strong></li>
-                        <li class="listaInformacoesSala">Código da sala: <strong>{{dado.code}}</strong></li>
-                        <!-- <li class="listaInformacoesSala">Participantes: {{dado.participants}}</li>
-                    <li class="listaInformacoesSala">Tempo restante: {{dado.timeLeft}}</li> -->
-                    </ul>
-                    <div class="divBotao">
-                        <app-button typeBtn="primary" textBtn="Encerrar sala" onclick="encerrarSala()"
-                            routerLink="/"></app-button>
-                        <app-button typeBtn="primary" textBtn="Baixar perguntas"
-                            (click)="exportarQuestions()"></app-button>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <app-admin-panel [dados]="dados" (baixarPerguntas)="onBaixarPerguntas()"></app-admin-panel>
+    </div>
         <div class="divPerguntas">
             <ng-container *ngFor="let question of questions">
-                <app-container-pergunta class="divPergunta"
-                    [ngStyle]="{ 'background-color': question.isDeleted ? 'rgba(255, 0, 0, 0.2)' : (question.isReplied ? 'rgba(101, 101, 172, 0.2)' : 'white') }">
-                    <div class="divP1">
-                        <p *ngIf="question.category">Categoria: {{question.category}}</p>
-                        <p>{{question.question}}</p>
-                    </div>
-                    <div class="status" *ngIf="question.isReplied"
-                        [ngStyle]="{display: question.isDeleted ? 'none' : 'block'}">
-                        <span>Respondida</span>
-                    </div>
-                    <div class="status" *ngIf="question.isDeleted">
-                        <span>Ocultada</span>
-                    </div>
-                    <div class="divIcones">
-                        <div class="divIconeNumero">
-                            <mat-icon fontIcon="thumb_up"></mat-icon>
-                            <p>{{question.vote}}</p>
-                        </div>
-                        <app-menu [id]="question.id" [questions]="questions"></app-menu>
-                    </div>
+                <app-container-pergunta [isAdmin]="true" [question]="question" [questions]="questions">
                 </app-container-pergunta>
             </ng-container>
         </div>
