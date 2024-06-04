@@ -1,17 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import Filter from 'bad-words';
 
 @Injectable({
   providedIn: 'root',
 })
 export class OffensiveWordsService {
-  private filter: Filter;
   private customBadWords: string[] = [];
   private variations: string[] = [];
 
   constructor(private http: HttpClient) {
-    this.filter = new Filter();
     this.loadCustomBadWords();
   }
 
@@ -23,7 +20,6 @@ export class OffensiveWordsService {
       .subscribe((words) => {
         this.customBadWords = words.map((word) => word.word);
         this.variations = this.generateVariations(this.customBadWords);
-        this.filter.addWords(...this.customBadWords, ...this.variations);
         console.log('palavras', this.customBadWords, this.variations);
       });
   }
@@ -80,7 +76,9 @@ export class OffensiveWordsService {
   }
 
   public containsOffensiveWord(message: string): boolean {
-    const cleanedMessage = this.filter.clean(message);
-    return cleanedMessage !== message;
+    return [...this.customBadWords, ...this.variations].some((word) => {
+      const regex = new RegExp(word, 'gi');
+      return regex.test(message);
+    });
   }
 }
