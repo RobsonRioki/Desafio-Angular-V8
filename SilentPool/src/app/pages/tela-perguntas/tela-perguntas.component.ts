@@ -25,14 +25,20 @@ interface Dados {
 @Component({
   selector: 'app-tela-perguntas',
   templateUrl: './tela-perguntas.component.html',
-  styleUrl: './tela-perguntas.component.css'
+  styleUrl: './tela-perguntas.component.css',
 })
 export class TelaPerguntasComponent implements OnInit {
   categoria: string = '';
   pergunta: string = '';
   codigo: string = '';
   id: string = '';
-  constructor(private questionService: QuestionService, private dadosService: DadosService, private route: ActivatedRoute) {  setInterval(() => this.getPerguntas(), 20000);}
+  constructor(
+    private questionService: QuestionService,
+    private dadosService: DadosService,
+    private route: ActivatedRoute
+  ) {
+    setInterval(() => this.getPerguntas(), 20000);
+  }
 
   questions: Array<Question> = [];
   dados: Array<Dados> = [];
@@ -45,8 +51,7 @@ export class TelaPerguntasComponent implements OnInit {
     this.dadosService.getDados().subscribe({
       next: (dado) => {
         this.dados = dado.filter((item: Dados) => String(item.code) === codigo);
-        console.log(dado);
-      }
+      },
     });
 
     this.getPerguntas();
@@ -54,14 +59,16 @@ export class TelaPerguntasComponent implements OnInit {
 
   getPerguntas() {
     this.questionService.getQuestions().subscribe({
-      next: question => {
-        this.questions = question.filter((item: Question) => item.workspace === String(this.codigo));
+      next: (question) => {
+        this.questions = question.filter(
+          (item: Question) => item.workspace === String(this.codigo)
+        );
         this.sortQuestionsByDeleted();
-      }
+      },
     });
   }
 
-  onQuestionSubmitted(data: { categoria: string, pergunta: string }) {
+  onQuestionSubmitted(data: { categoria: string; pergunta: string }) {
     console.log(data.categoria, data.pergunta);
 
     const novaPergunta = {
@@ -70,12 +77,11 @@ export class TelaPerguntasComponent implements OnInit {
       vote: 0,
       isDeleted: false,
       isReplied: false,
-      workspace: this.codigo
+      workspace: this.codigo,
     };
 
-    console.log(novaPergunta)
-    if(data.pergunta != ''){
-
+    console.log(novaPergunta);
+    if (data.pergunta != '') {
       this.questionService.postQuestion(novaPergunta).subscribe({
         next: () => {
           console.log('Pergunta enviada com sucesso:');
@@ -85,10 +91,10 @@ export class TelaPerguntasComponent implements OnInit {
         },
         error: (error) => {
           console.log(error);
-        }
+        },
       });
     } else {
-      alert('Insira uma pergunta')
+      alert('Insira uma pergunta');
     }
   }
 
@@ -96,19 +102,19 @@ export class TelaPerguntasComponent implements OnInit {
     const questionToUpdate = this.questions.find(
       (item: Question) => item.id === id
     );
-    if (questionToUpdate?.isReplied){
-      console.log("Pergunta já respondida, não foi possivel atualizar voto")
-    }else{
-    if (questionToUpdate) {
-      questionToUpdate.vote++;
-      this.questionService.updateQuestion(questionToUpdate).subscribe({
-        next: () => {
-          console.log('Voto atualizado com sucesso!');
-          this.sortQuestionsByDeleted();
-        },
-      });
+    if (questionToUpdate?.isReplied) {
+      console.log('Pergunta já respondida, não foi possivel atualizar voto');
+    } else {
+      if (questionToUpdate) {
+        questionToUpdate.vote++;
+        this.questionService.updateQuestion(questionToUpdate).subscribe({
+          next: () => {
+            console.log('Voto atualizado com sucesso!');
+            this.sortQuestionsByDeleted();
+          },
+        });
+      }
     }
-  }
   }
 
   sortQuestionsByDeleted() {

@@ -12,7 +12,7 @@ import { ButtonComponent } from './shared/button/button.component';
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ModalComponent } from './shared/modal/modal.component';
 import { MenuComponent } from './shared/menu/menu.component';
 import { MatMenuModule } from '@angular/material/menu';
@@ -21,7 +21,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AskFormComponent } from './shared/ask-form/ask-form.component';
 import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component';
-
+import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
 
 @NgModule({
   declarations: [
@@ -36,8 +36,8 @@ import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component'
     TelaPerguntasComponent,
     MenuComponent,
     AskFormComponent,
-    AdminPanelComponent
-
+    AdminPanelComponent,
+    FilterOffensiveWordsDirective,
   ],
   imports: [
     BrowserModule,
@@ -48,12 +48,9 @@ import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component'
     MatMenuModule,
     HttpClientModule,
     FormsModule,
-    CommonModule
-
+    CommonModule,
   ],
-  providers: [
-    provideAnimationsAsync()
-  ],
-  bootstrap: [AppComponent]
+  providers: [provideAnimationsAsync()],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
