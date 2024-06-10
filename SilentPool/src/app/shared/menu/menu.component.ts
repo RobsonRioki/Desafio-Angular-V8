@@ -1,6 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { QuestionService } from '../../services/question.service';
-import { DadosService } from '../../services/dados.service';
 
 interface Question {
   category: string;
@@ -24,15 +23,13 @@ interface Dados {
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.css'], 
+  styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
   @Input() id: string = '';
   @Input() questions: Array<Question> = [];
 
-  constructor(
-    private questionService: QuestionService
-  ) {}
+  constructor(private questionService: QuestionService) {}
 
   ngOnInit(): void {
     console.log(this.id);
@@ -48,9 +45,9 @@ export class MenuComponent implements OnInit {
         next: () => {
           console.log('Pergunta marcada como respondida com sucesso!');
         },
-        error: (err) => {
+        error: (err: any) => {
           console.error('Erro ao atualizar pergunta:', err);
-        }
+        },
       });
     }
     console.log(this.id);
@@ -66,14 +63,14 @@ export class MenuComponent implements OnInit {
         next: () => {
           console.log('Pergunta ocultada com sucesso!');
         },
-        error: (err) => {
+        error: (err: any) => {
           console.error('Erro ao ocultar pergunta:', err);
-        }
+        },
       });
     }
     console.log(this.id);
   }
-  desocultar(){
+  desocultar() {
     const questionToUpdate = this.questions.find(
       (item: Question) => item.id === this.id
     );
@@ -83,9 +80,9 @@ export class MenuComponent implements OnInit {
         next: () => {
           console.log('Pergunta ocultada com sucesso!');
         },
-        error: (err) => {
+        error: (err: any) => {
           console.error('Erro ao ocultar pergunta:', err);
-        }
+        },
       });
     }
     console.log(this.id);
