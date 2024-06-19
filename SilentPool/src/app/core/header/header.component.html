@@ -1,1 +1,4 @@
-<p>header works!</p>
+<div [ngClass]="{'primary': typeHeader=== 'primary', 'secondary': typeHeader==='secondary'}">
+<ng-content>
+</ng-content>
+</div>

@@ -5,7 +5,7 @@ button {
 }
 
 .size-100{
-    width: 100px;
+    width: 130px;
 }
 
 .size-410{
@@ -25,7 +25,7 @@ button {
     border: 1px solid #CBD5E1;
 }
 .tertiary{
-    background-color: #84CC16;
+    background-color: #198038;
     color: rgb(253, 236, 236);
     border: 1px solid;
     margin-left: 10px;
