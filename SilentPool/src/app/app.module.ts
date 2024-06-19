@@ -22,6 +22,8 @@ import { CommonModule } from '@angular/common';
 import { AskFormComponent } from './shared/ask-form/ask-form.component';
 import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component';
 import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
+import { HomeNewComponent } from './pages/home-new/home-new.component';
+import { HeaderComponent } from './core/header/header.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
     AskFormComponent,
     AdminPanelComponent,
     FilterOffensiveWordsDirective,
+    HomeNewComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
