@@ -16,12 +16,14 @@
 .tituloHeader{
     color: #198038;
     font-weight: bold;
+    margin: 0;
 }
 
 .sec1{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .divEntrarParticipante{
@@ -51,6 +53,7 @@
     border: none;
     width: 150px;
     height: 20px;
+    outline: none;
 }
 
 .tag{
