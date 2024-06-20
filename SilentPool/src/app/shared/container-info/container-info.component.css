@@ -16,8 +16,13 @@
     border-radius: 32px;
     background-color: #1C5D8C;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     color: white;
+    padding: 0 10px;
+}
+
+.divEntrarParticipante span{
+    margin-left: 10px;
 }
 
 .divInserirCodigo {
