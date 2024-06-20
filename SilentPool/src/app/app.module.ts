@@ -24,6 +24,8 @@ import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component'
 import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
 import { HomeNewComponent } from './pages/home-new/home-new.component';
 import { HeaderComponent } from './core/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { ContainerInfoComponent } from './shared/container-info/container-info.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,9 @@ import { HeaderComponent } from './core/header/header.component';
     AdminPanelComponent,
     FilterOffensiveWordsDirective,
     HomeNewComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    ContainerInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'home-new',
     component: HomeNewComponent
+  },
+  {
+    path: 'home3',
+    loadChildren: () => import('./pages/home3/home3.module').then(m=>m.Home3Module)
   }
 ];
 
