@@ -9,7 +9,7 @@
 }
  
 * {
-  font-family: "Roboto", sans-serif;
+  font-family: Verdana;
   /* font-weight: bold; */
   box-sizing: border-box;
 }
@@ -35,4 +35,12 @@ ul {
   margin-inline-end: 0px;
   padding-inline-start: 0px;
   unicode-bidi: isolate;
+}
+
+.mat-h2, .mat-headline-6, .mat-typography .mat-h2, .mat-typography .mat-headline-6, .mat-typography h2 {
+  margin-bottom: 0;
+}
+
+.mat-h3, .mat-subtitle-1, .mat-typography .mat-h3, .mat-typography .mat-subtitle-1, .mat-typography h3 {
+  margin-bottom: 0;
 }

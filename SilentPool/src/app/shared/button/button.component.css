@@ -1,10 +1,10 @@
 button {
     border: 0px;
-    height: 44px;
+    height: 48px;
     border-radius: var(--borderr);
 }
 
-.size-100{
+.size-130{
     width: 130px;
 }
 
@@ -12,6 +12,9 @@ button {
     width: 410px;
 }
 
+.size-220{
+    width: 220px;
+}
 
 
 .primary{

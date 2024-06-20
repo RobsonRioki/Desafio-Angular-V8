@@ -8,4 +8,6 @@ import { Component, Input } from '@angular/core';
 export class ContainerInfoComponent {
   @Input() titulo: string = '';
   @Input() descricao: string = '';
+  @Input() exibir: boolean = true;
+  @Input() corFundo: string = "white"
 }

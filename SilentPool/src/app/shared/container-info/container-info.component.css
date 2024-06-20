@@ -1,13 +1,15 @@
+
 .sec1 {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    width: 100%;
+    margin: 40px 0;
 }
 
 .divEntrarParticipante {
     display: flex;
-    margin-top: 64px;
     flex-direction: row;
     width: 600px;
     height: 58px;
@@ -62,12 +64,11 @@
     flex-direction: column;
     align-items: center;
     padding: 50px;
-    gap: 50px;
 }
 
 .text-info h2 {
     max-width: 900px;
-    font-size: 56pt;
+    font-size: 35pt;
     line-height: 1.2;
     text-align: center;
 }

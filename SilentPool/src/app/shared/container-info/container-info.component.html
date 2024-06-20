@@ -1,5 +1,5 @@
-<section class="sec1">
-    <div class="divEntrarParticipante">
+<section class="sec1" [style.background-color]="corFundo">
+    <div *ngIf="exibir" class="divEntrarParticipante">
         <span>Entrar como participante</span>
         <div class="divInserirCodigo">
             <img src="../../../assets/img/tag.png" alt="Imagem de tag" class="tag">
@@ -10,7 +10,7 @@
         </div>
     </div>
     <div class="text-info">
-        <h2>{{ titulo }}</h2>
+        <h2>{{ titulo }}</h2> <br>
         <h3>{{ descricao }}</h3>
     </div>
 </section>

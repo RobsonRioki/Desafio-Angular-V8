@@ -1,3 +1,4 @@
+import { withInterceptors } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrl: './home-new.component.css'
 })
 export class HomeNewComponent {
-
+  public exibir: boolean = false;
+  public corFundo: string = "white";
 }
