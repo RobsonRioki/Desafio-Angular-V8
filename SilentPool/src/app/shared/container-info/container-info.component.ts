@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-container-info',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './container-info.component.css'
 })
 export class ContainerInfoComponent {
-
+  @Input() titulo: string = '';
+  @Input() descricao: string = '';
 }
