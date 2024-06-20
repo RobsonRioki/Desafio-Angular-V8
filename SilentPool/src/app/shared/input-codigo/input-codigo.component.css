@@ -1,0 +1,64 @@
+.insCodigo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin: 40px 0 0 0;
+}
+
+.divEntrarParticipante {
+    display: flex;
+    flex-direction: row;
+    width: 600px;
+    height: 58px;
+    border-radius: 32px;
+    background-color: #1C5D8C;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    padding: 0 10px;
+}
+
+.divEntrarParticipante span {
+    margin-left: 10px;
+}
+
+.divInserirCodigo {
+    display: flex;
+    background-color: white;
+    width: 230px;
+    height: 42px;
+    border: 1px solid #999999;
+    border-radius: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.inputCodigo {
+    border: none;
+    width: 150px;
+    height: 20px;
+    outline: none;
+}
+
+.tag {
+    width: 24px;
+    height: 24px;
+}
+
+.botaoEntrar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: none;
+    background-color: #1C5D8C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    width: 24px;
+    height: 24px;
+}

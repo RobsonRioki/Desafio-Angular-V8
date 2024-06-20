@@ -23,9 +23,9 @@ import { AskFormComponent } from './shared/ask-form/ask-form.component';
 import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component';
 import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
 import { HomeNewComponent } from './pages/home-new/home-new.component';
-import { HeaderComponent } from './core/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { ContainerInfoComponent } from './shared/container-info/container-info.component';
+import { Home3Module } from './pages/home3/home3.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,6 @@ import { ContainerInfoComponent } from './shared/container-info/container-info.c
     HomeComponent,
     TelaAdminComponent,
     ContainerComponent,
-    ButtonComponent,
     ContainerPerguntaComponent,
     ModalComponent,
     TelaPerguntasComponent,
@@ -43,9 +42,7 @@ import { ContainerInfoComponent } from './shared/container-info/container-info.c
     AdminPanelComponent,
     FilterOffensiveWordsDirective,
     HomeNewComponent,
-    HeaderComponent,
-    FooterComponent,
-    ContainerInfoComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +54,8 @@ import { ContainerInfoComponent } from './shared/container-info/container-info.c
     HttpClientModule,
     FormsModule,
     CommonModule,
+    Home3Module,
+    SharedModule
   ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],

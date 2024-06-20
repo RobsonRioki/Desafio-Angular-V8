@@ -1,1 +1,20 @@
-<p>aaaaaa</p>
+<app-header typeHeader="primary">
+    <nav class="navbar">
+        <ul class="ulHeader">
+            <li>
+                <h1 class="tituloHeader">V8 Poll</h1>
+            </li>
+            <li><app-button widthBtn='130' typeBtn="tertiary" textBtn="Nova Sala"></app-button></li>
+        </ul>
+    </nav>
+</app-header>
+<app-input-codigo></app-input-codigo>
+<app-container-info [titulo]="'A facilidade para deixar suas reuniões interativas'"
+    [descricao]="'Estimule seus colaboradores a participarem com perguntas anônimas ou não durante a reunião'">
+</app-container-info>
+<app-button widthBtn='220' typeBtn="tertiary" textBtn="Comece agora"></app-button>
+<img src="../../../assets/img/imgsEXs.png" alt="Imagem exemplo tela de perguntas" class="imgExs">
+<app-container-info [corFundo]="'#FAF7F0'" [titulo]="'Gerencie as perguntas em tempo real'">
+</app-container-info>
+<app-container-info [corFundo]="'white'" [titulo]="'O meio mais simples de incluir todos nas reuniões'" [descricao]="'O V8Poll oferece o que você precisa para envolver seus participantes, capturar suas opiniões sinceras e fazer com que todos se sintam conectados'">
+</app-container-info>

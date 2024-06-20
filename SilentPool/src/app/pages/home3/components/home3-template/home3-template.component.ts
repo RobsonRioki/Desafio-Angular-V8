@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrl: './home3-template.component.css'
 })
 export class Home3TemplateComponent {
-
+  public corFundo: string = "white";
 }
