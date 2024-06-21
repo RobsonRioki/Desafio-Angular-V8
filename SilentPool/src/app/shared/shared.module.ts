@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContainerInfoComponent } from './container-info/container-info.component';
 import { HeaderComponent } from '../core/header/header.component';
 import { ButtonComponent } from './button/button.component';
+import { ImagemComponent } from './imagem/imagem.component';
 
 
 
@@ -11,7 +12,8 @@ import { ButtonComponent } from './button/button.component';
   declarations: [
     ContainerInfoComponent,
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent,
+    ImagemComponent
 
   ],
   imports: [
@@ -20,7 +22,8 @@ import { ButtonComponent } from './button/button.component';
   exports: [
     ContainerInfoComponent,
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent,
+    ImagemComponent
   ]
 })
 export class SharedModule { }

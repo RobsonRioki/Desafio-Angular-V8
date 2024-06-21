@@ -9,7 +9,7 @@
 }
  
 * {
-  font-family: Verdana;
+  font-family: Verdana, bold;
   /* font-weight: bold; */
   box-sizing: border-box;
 }
