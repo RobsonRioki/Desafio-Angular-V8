@@ -3,8 +3,8 @@
         <span>Entrar como participante</span>
         <div class="divInserirCodigo">
             <img src="../../../assets/img/tag.png" alt="Imagem de tag" class="tag">
-            <input type="text" class="inputCodigo" placeholder="Código aqui">
-            <button class="botaoEntrar">
+            <input type="text" class="inputCodigo" placeholder="Código aqui" [(ngModel)]="codigo">
+            <button class="botaoEntrar" (click)="onEnviarCodigo()">
                 <img src="../../../assets/img/arrow.png" alt="Imagem de seta" class="arrow">
             </button>
         </div>

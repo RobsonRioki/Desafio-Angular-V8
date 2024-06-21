@@ -8,7 +8,7 @@
         </ul>
     </nav>
 </app-header>
-<app-input-codigo></app-input-codigo>
+<app-input-codigo (code)="onCodigoRecebido($event)"></app-input-codigo>
 <app-container-info [titulo]="'A facilidade para deixar suas reuniões interativas'"
     [descricao]="'Estimule seus colaboradores a participarem com perguntas anônimas ou não durante a reunião'">
 </app-container-info>

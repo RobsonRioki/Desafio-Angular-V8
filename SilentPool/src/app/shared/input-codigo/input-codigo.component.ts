@@ -1,10 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-input-codigo',
   templateUrl: './input-codigo.component.html',
-  styleUrl: './input-codigo.component.css'
+  styleUrls: ['./input-codigo.component.css']
 })
 export class InputCodigoComponent {
+  @Output() code = new EventEmitter<{codigo: string}>();
 
+  codigo!: string;
+
+  onEnviarCodigo() {
+    this.code.emit({codigo: this.codigo});
+    this.codigo = '';
+  }
 }

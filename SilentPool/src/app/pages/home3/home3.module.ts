@@ -6,6 +6,7 @@ import { HomeRoutingModule } from './home3-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { InputCodigoComponent } from '../../shared/input-codigo/input-codigo.component';
 import { CardComponent } from '../../shared/card/card.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CardComponent } from '../../shared/card/card.component';
   imports: [
     CommonModule,
     HomeRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class Home3Module { }
