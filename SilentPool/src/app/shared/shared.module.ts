@@ -4,6 +4,7 @@ import { ContainerInfoComponent } from './container-info/container-info.componen
 import { HeaderComponent } from '../core/header/header.component';
 import { ButtonComponent } from './button/button.component';
 import { ImagemComponent } from './imagem/imagem.component';
+import { FooterComponent } from './footer/footer.component';
 
 
 
@@ -13,7 +14,8 @@ import { ImagemComponent } from './imagem/imagem.component';
     ContainerInfoComponent,
     HeaderComponent,
     ButtonComponent,
-    ImagemComponent
+    ImagemComponent,
+    FooterComponent
 
   ],
   imports: [
@@ -23,7 +25,8 @@ import { ImagemComponent } from './imagem/imagem.component';
     ContainerInfoComponent,
     HeaderComponent,
     ButtonComponent,
-    ImagemComponent
+    ImagemComponent,
+    FooterComponent
   ]
 })
 export class SharedModule { }
