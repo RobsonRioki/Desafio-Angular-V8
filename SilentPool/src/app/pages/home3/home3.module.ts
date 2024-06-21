@@ -5,12 +5,14 @@ import { Home3TemplateComponent } from './components/home3-template/home3-templa
 import { HomeRoutingModule } from './home3-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { InputCodigoComponent } from '../../shared/input-codigo/input-codigo.component';
+import { CardComponent } from '../../shared/card/card.component';
 
 @NgModule({
   declarations: [
     Home3Component,
     Home3TemplateComponent,
-    InputCodigoComponent
+    InputCodigoComponent,
+    CardComponent
   ],
   imports: [
     CommonModule,

@@ -22,7 +22,6 @@ import { CommonModule } from '@angular/common';
 import { AskFormComponent } from './shared/ask-form/ask-form.component';
 import { AdminPanelComponent } from './shared/admin-panel/admin-panel.component';
 import { FilterOffensiveWordsDirective } from './directive/offensive.directive';
-import { HomeNewComponent } from './pages/home-new/home-new.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { Home3Module } from './pages/home3/home3.module';
 import { SharedModule } from './shared/shared.module';
@@ -41,7 +40,6 @@ import { SharedModule } from './shared/shared.module';
     AskFormComponent,
     AdminPanelComponent,
     FilterOffensiveWordsDirective,
-    HomeNewComponent,
     FooterComponent
   ],
   imports: [
