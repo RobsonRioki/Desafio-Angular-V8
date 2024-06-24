@@ -3,25 +3,5 @@
     align-items: center;
     justify-content: center;
 }
-.navbar {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    justify-content: center;
-}
-
-.ulHeader {
-    display: flex;
-    flex-direction: row;
-    list-style: none;
-    align-items: center;
-    gap: 80vw;
-}
-
-.tituloHeader {
-    color: #198038;
-    font-weight: bold;
-    margin: 0;
-}
 
 
