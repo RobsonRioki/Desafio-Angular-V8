@@ -1,48 +1,75 @@
 .modal {
     display: flex;
-    width: 500px;
-    height: 300px;
-}
-
-.opcoes{
-    width: 90%;
-    padding: 5px;
-}
-
-.opcoes select{
-    display: flex;
-    width: 50%;
-    height: 40px;
-    border-color: var(--grey-300);
-    border-radius: var(--borderr);
-    padding: 5px;
-}
-
-.opcoes input{
-    width: 100%;
-    height: 40px;
-    margin: 10px 0;
-    border-color: var(--grey-300);
-    border-radius: var(--borderr);
-    border: 1px solid #CBD5E1; 
-    padding: 10px;
-    outline: none;
-    background-color: white;
-    
+    width: 600px;
+    height: 322px;
 }
 
 .container-popout{
     width: 100%;
-    padding: 20px;
+    padding: 32px;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     flex-direction: column;
 }
 
 .botoes-popout{
     width: 100%;
     display: flex;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inicioFim{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.inicio, .fim{
+    display: flex;
+    flex-direction: column;
+}
+
+.inputData{
+    width: 258px;
+    height: 44px;
+    border-radius: var(--borderr);
+    border: 1px solid #CBD5E1;
+    outline: none;
+    background-color: white;
+    padding: 20px;
+}
+
+.nomeSala{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+}
+
+.nomeSala input{
+    width: 536px;
+    height: 44px;
+    border-radius: var(--borderr);
+    border: 1px solid #CBD5E1;
+    outline: none;
+    background-color: white;
+    padding: 20px;
+}
+
+.divModalInfo{
+    display: flex;
+    width: 330px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #E5EFFF;
+    border: 1px solid #0F62FE;
+    border-radius: var(--borderr);
+}
+
+img{
+    width: 13px;
+    height: 13px;
 }
 
 @media screen and (max-width: 1025px) {
@@ -52,9 +79,6 @@
         height: 400px;
     }
 
-    .opcoes select{
-        width: 80%;
-    }
 }
 
 

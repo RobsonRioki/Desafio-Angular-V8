@@ -3,6 +3,9 @@ button {
     height: 48px;
     border-radius: var(--borderr);
 }
+.size-110{
+    width: 110px;
+}
 
 .size-130{
     width: 130px;
@@ -32,6 +35,12 @@ button {
     color: rgb(253, 236, 236);
     border: 1px solid;
     margin-left: 10px;
+}
+
+.cancelar{
+    background-color: white;
+    border: none;
+    color: rgb(22, 21, 21);
 }
 
 @media screen and (max-width: 1025px){

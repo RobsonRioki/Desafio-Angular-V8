@@ -1,20 +1,29 @@
 <section class="modal">
     <div class="container-popout">
-        <h1 mat-dialog-title>Vamos criar uma nova sala de perguntas</h1>
-        <div class="opcoes">
+        <h1>Quanto tempo você usará a sala?</h1>
+            <div class="inicioFim">
+                <div class="inicio">
+                    <span>Início</span>
+                    <input type="date" class="inputData" id="dataInicio">
+                </div>
+                <div class="fim">
+                    <span>Fim</span>
+                    <input type="date" class="inputData" id="dataFim">
+
+                </div>
+            </div>
+            <div class="nomeSala">
+            <span>Qual o nome da sala?</span>
             <input type="text" placeholder="Nome da sala" [(ngModel)]="nomeSala">
-            <select name="" id="selecionar-duracao" [(ngModel)]="tempo" >
-                <option value="0">Tempo de uso da sala</option>
-                <option value="0:30:00">30min</option>
-                <option value="1:00:00">1h</option>
-                <option value="2:00:00">2h</option>
-            </select>
-        </div>
-        <div mat-dialog-content>
         </div>
         <div class="botoes-popout">
-            <app-button typeBtn="secondary"  textBtn="Cancelar" mat-dialog-close></app-button>
-            <app-button typeBtn="tertiary" textBtn="Criar" (click)="CriarSala()" mat-dialog-close></app-button>
+            <div class="divModalInfo">
+                <span><img src="../../../assets/img/SVG.png" alt="" class=""> Qualquer um com o link pode participar</span>
+            </div>
+            <div>
+            <app-button typeBtn="cancelar"  textBtn="Cancelar" mat-dialog-close></app-button>
+            <app-button typeBtn="tertiary" textBtn="Criar sala" (click)="CriarSala()" widthBtn='110' mat-dialog-close></app-button>
+            </div>
         </div>
     </div>
 </section>

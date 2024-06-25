@@ -4,6 +4,7 @@ import { ModalComponent } from '../../../../shared/modal/modal.component';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DadosService } from '../../../../services/dados.service'; 
 
+
 interface Dados {
   createAt: number;
   name: string;

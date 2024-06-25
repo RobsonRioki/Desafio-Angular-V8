@@ -8,6 +8,7 @@ import { InputCodigoComponent } from '../../shared/input-codigo/input-codigo.com
 import { CardComponent } from '../../shared/card/card.component';
 import { FormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     Home3Component,

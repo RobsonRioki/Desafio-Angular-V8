@@ -8,7 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MatButtonModule } from '@angular/material/button';
 import { TelaAdminComponent } from './pages/tela-admin/tela-admin.component';
 import { ContainerComponent } from './shared/container/container.component';
-import { ButtonComponent } from './shared/button/button.component';
+
 import { ContainerPerguntaComponent } from './shared/container-pergunta/container-pergunta.component';
 import { MatIconModule } from '@angular/material/icon';
 import { TelaPerguntasComponent } from './pages/tela-perguntas/tela-perguntas.component';

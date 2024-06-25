@@ -8,7 +8,7 @@ import { DadosService } from '../../services/dados.service';
   styleUrl: './button.component.css',
 })
 export class ButtonComponent {
-  @Input() typeBtn: 'primary' | 'secondary' | 'tertiary' = 'primary';
+  @Input() typeBtn: 'primary' | 'secondary' | 'tertiary' | 'cancelar' = 'primary';
   @Input() textBtn!: string;
   @Input() widthBtn: string = '100';
 }
