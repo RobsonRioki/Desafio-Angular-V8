@@ -1,4 +1,4 @@
 <button *ngIf="textBtn" type="button"
-  [ngClass]="{'primary': typeBtn=== 'primary', 'secondary': typeBtn==='secondary', 'tertiary' : typeBtn==='tertiary', 'cancelar': typeBtn==='cancelar', 'size-130': widthBtn==='130', 'size-410': widthBtn==='410', 'size-220': widthBtn=== '220', 'size-110' : widthBtn=== '110'} ">
+  [ngClass]="{'primary': typeBtn=== 'primary', 'secondary': typeBtn==='secondary', 'tertiary' : typeBtn==='tertiary', 'cancelar': typeBtn==='cancelar', 'size-130': widthBtn==='130', 'size-410': widthBtn==='410', 'size-220': widthBtn=== '220', 'size-110' : widthBtn=== '110'} " (click)="onClick()">
   {{textBtn}}
 </button>

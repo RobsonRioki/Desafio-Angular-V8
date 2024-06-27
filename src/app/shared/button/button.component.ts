@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
-import { DadosService } from '../../services/dados.service';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-button',
@@ -11,4 +10,10 @@ export class ButtonComponent {
   @Input() typeBtn: 'primary' | 'secondary' | 'tertiary' | 'cancelar' = 'primary';
   @Input() textBtn!: string;
   @Input() widthBtn: string = '100';
+
+  @Output() click: EventEmitter<boolean> = new EventEmitter<boolean>()
+
+  onClick(){
+    this.click.emit(true)
+  }
 }
