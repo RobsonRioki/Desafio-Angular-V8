@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../../../../shared/modal/modal.component'; 
 import { ActivatedRoute, Router } from '@angular/router';
@@ -21,6 +21,8 @@ interface Dados {
 })
 export class Home3TemplateComponent {
   code = '';
+
+  @Output() modal: EventEmitter<boolean> = new EventEmitter<boolean>()
 
   constructor(
     public dialog: MatDialog,
@@ -58,6 +60,10 @@ export class Home3TemplateComponent {
   }
 
   openDialog() {
-    this.dialog.open(ModalComponent);
+    // this.dialog.open(ModalComponent);
+    this.modal.emit(true)
   }
+
+  
+
 }
